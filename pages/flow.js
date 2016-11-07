@@ -1,0 +1,13 @@
+var carHost_name =$('#carHost_name').val();//车主姓名
+var carInfo_IdClass = $("._select").val();//车主证件类型;
+var hostIdNum = $(".carInfo_number").val();//车主证件号;
+var toubao_name = $("#toubao_name").val();//投保人姓名;
+var toubao_select = $(".toubao_select").val();//投保人证件类型;
+var toubao_number = $("#toubao_number").val();//投保人证件号;
+var beibao_name = $("#beibao_name").val();//被保人姓名;
+var beibao_select = $(".beibao_select").val();//被保人证件类型;
+var beibao_number = $("#beibao_number").val();//被保人证件号;
+var frame_number = $("#frame_number").val();//车架号;
+var power_number = $("#power_number").val();//发动机号;
+var zhuce_date = $("#zhuce_date").val();//注册日期;
+var guohu_date = $("#guohu_date").val();//过户日期；
