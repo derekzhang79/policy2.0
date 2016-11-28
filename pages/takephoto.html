@@ -131,7 +131,7 @@
 			}
 			/*弹窗样式*/
 			._cellTable{
-				display: none;
+				display: block;
 			}
 			/*新增*/
 			.cover{
@@ -155,7 +155,7 @@
 			    position: fixed;
 			    left: 5%;
 			    right: 0;
-			    top: 6rem;
+			     top:9rem;
 			    background: rgba(0, 0, 0, 0.2);
 			    overflow-y: scroll;
 			    z-index: 4;
@@ -207,7 +207,7 @@
 			.coverTitle{
 				padding: 13px 0;
 				 z-index: 4;
-				top: 50px;
+				top: 93px;
 				left: 5%;
 				width: 90%;
 				position: fixed;
@@ -378,12 +378,12 @@
 								<div class="weui_cell_hd"><label class="weui_label">车辆性质</label></div>
 								<div class="">
 									<input class="" id="yes" onchange="carType(this)" type="radio" name="carType" style="display: none;" />
-									<label for="yes c_666"><span class="iconfont icon-iconfontwancheng c_999"></span>运营</label>
+									<label for="yes"><span class="iconfont icon-iconfontwancheng c_999"></span>运营</label>
 									
 								</div>
 								<div   style="margin-left: 20px;">
 									<input class="" id="no" onchange="carType(this)" type="radio" name="carType" checked="checked" style="display: none;" />
-									<label for="no c_666"><span class="iconfont icon-yuan c_099"></span>非运营</label>
+									<label for="no"><span class="iconfont icon-yuan c_099"></span>非运营</label>
 								</div>
 							</div>
 							
@@ -391,24 +391,24 @@
 								<div class="weui_cell_hd"><label class="weui_label">是过户车</label></div>
 								<div class="">
 									<input class="" id="guohuyes" onchange="guohu(this)" type="radio" name="guohu" style="display: none;" />
-									<label for="guohuyes c_666"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
+									<label for="guohuyes"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
 									
 								</div>
 								<div   style="margin-left: 20px;">
 									<input class="" id="guohuno" onchange="guohu(this)" type="radio" name="guohu" checked="checked" style="display: none;"/>
-									<label for="guohuno c_666"><span class="iconfont icon-yuan c_099"></span>否</label>
+									<label for="guohuno"><span class="iconfont icon-yuan c_099"></span>否</label>
 								</div>
 							</div>
 							<div class="weui_cell" style="width: 87%;">
 								<div class="weui_cell_hd"><label class="weui_label">是贷款车</label></div>
 								<div class="">
 									<input class="" id="daikuanyes"onchange="daikuan(this)" type="radio" name="daikuan" style="display: none;" />
-									<label for="daikuanyes c_666"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
+									<label for="daikuanyes"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
 									
 								</div>
 								<div   style="margin-left: 20px;">
 									<input class="" id="daikuanno"onchange="daikuan(this)" type="radio" name="daikuan" checked="checked" style="display: none;"/>
-									<label for="daikuanno c_666"><span class="iconfont icon-yuan c_099"></span>否</label>
+									<label for="daikuanno"><span class="iconfont icon-yuan c_099"></span>否</label>
 								</div>
 							</div>
 						</div>
@@ -551,6 +551,22 @@
 			}
 		}
      $(function () { 
+     	/*初始化阅读协议*/
+     	if($("#goodSelect3")[0].checked){
+     		var initItem = $("#goodSelect3")
+			flag=1;
+			initItem.next().eq(0).find(".icon").addClass("icon-yuan");
+			initItem.next().eq(0).find(".icon").addClass("c_099");
+			initItem.next().eq(0).find(".icon").removeClass("icon-iconfontwancheng");
+			initItem.next().eq(0).find(".icon").removeClass("c_999");
+			
+     	}else{
+			flag=0;
+//			initItem.next().eq(0).find(".icon").removeClass("icon-yuan");
+//			initItem.next().eq(0).find(".icon").removeClass("c_099");
+//			initItem.next().eq(0).find(".icon").addClass("icon-iconfontwancheng");
+//			initItem.next().eq(0).find(".icon").addClass("c_999");
+		}
      	
      	/*关闭弹框*/
      	$('._closeBtn').on("click",function(){

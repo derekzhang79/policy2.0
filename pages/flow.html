@@ -22,7 +22,6 @@
 	    <link href="../css/css/mobiscroll.scroller.android-holo.css" rel="stylesheet" type="text/css" />
 	    
 	    <script src="../js/lib/mui.js"></script>
-	    <!--<script type="text/javascript" src="../js/lib/fastclick.min.js"></script>-->
 		<script type="text/javascript" src="../js/lib/jquery-1.7.min.js"></script>
 		
 		 <script src="../js/js/mobiscroll.core.js"></script>
@@ -41,19 +40,17 @@
 		.weui_input{
 			color: #999;
 		}
+		
 		.headerbox{
 			
 			/*left: 8%;*/
 			padding: 1rem 0;
-			transition: all 1s;
-			-moz-transition: all 1s;	/* Firefox 4 */
-			-webkit-transition: all 1s;	/* Safari 和 Chrome */
-			-o-transition: all 1s;	/* Opera */
-			background:rgba(255,255,255,1);
+			
+			background:rgba(248,248,248,1);
 			position: fixed;
 			top: -10px;
 			width: 100%;
-			z-index: 9999999;
+			z-index: 2;
 		}
 		header{
 				margin-top: .5rem;
@@ -174,12 +171,12 @@
 				 
 			}
 			.scrollBox{
-				max-height:400px;
+				max-height:300px;
 			    width: 90%;
 			    position: fixed;
 			    left: 5%;
 			    right: 0;
-			    top: 6rem;
+			    top: 8rem;
 			    background: rgba(0, 0, 0, 0.2);
 			    overflow-y: scroll;
 			    z-index: 4;
@@ -231,7 +228,7 @@
 			.coverTitle{
 				padding: 13px 0;
 				 z-index: 4;
-				top: 50px;
+				top: 80px;
 				left: 5%;
 				width: 90%;
 				position: fixed;
@@ -253,11 +250,11 @@
 			
 		/*车辆信息样式begin*/
 			
-			.carInfo>.carNumber{
-				border: 3px dashed #009944;
-				width: 98%;
-				margin-top: 20px;
-				padding: .3rem 0;
+			.carNumber{
+				/*border: 3px dashed #009944;*/
+				/*width: 98%;
+				margin-top: 20px;*/
+				padding: .2rem 0;
 				font-weight: 400;
 				font-size: 2rem;
 			}
@@ -431,21 +428,25 @@
 			.reBtn{
 				padding: .5rem 1rem;
 				border-radius: 5px;
-				margin-top: -30px;
+				right: .8rem;
+				top: -30px;
+				/*margin-top: -15%;*/
 				font-size: 12px;
 				/*border: .5px solid #04BE02;*/
 				border: none;
-				margin-right: .5rem;
+				/*margin-right: .5rem;*/
 				background: #FF7F00;
 			}
 			.loseBtn{
 				padding: .5rem 1.3rem;
 				border-radius: 5px;
-				margin-top: -30px;
+				right: 6rem;
+				top: -30px;
+				/*margin-top: -15%;*/
 				font-size: 12px;
 				/*border: .5px solid #04BE02;*/
 				border: none;
-				margin-right: .5rem;
+				/*margin-right: 5.5rem;*/
 				background: #ECECEC;
 				color: #ccc;
 			}
@@ -748,10 +749,12 @@
 		</header>
 		<!--车辆信息begin-->
 		<div id="carInfo" class="carInfo">
+			<div style="padding: .3rem ;border: 3px solid #009944;margin:10px auto 0;width: 95%; ">
+				<p class="carNumber tc bg_099 f18 b400 c_fff">
+					川A34545
+				</p>
+			</div>
 			
-			<p class="carNumber tc bg_f f18 b400 c_999">
-				川A34545
-			</p>
 			<h5 class="carHost c_099 f15 b400">车主信息</h5>
 			<div class="bg_f">
 				<div class="weui_cell" style="width: 87%;">
@@ -792,7 +795,7 @@
 					<div class="weui_cell_hd fl" style="width: 30%;margin-left: 4%;margin-top: 10px;"><label class="weui_label">投保人信息</label></div>
 			        <label class="weui_cell weui_check_label fr"  style="width: 43%;" for="carInfo_man">
 			            <div class="weui_cell_hd">
-			                <input type="checkbox" class="weui_check" flag="01" onchange="poftType(this)" name="checkbox1" id="carInfo_man" checked="checked">
+			                <input type="checkbox" class="weui_check needsclick" flag="01" onchange="poftType(this)" name="checkbox1" id="carInfo_man" checked="checked">
 			                <i class="weui_icon_checked"></i>
 			            </div>
 			            <div class="weui_cell_bd weui_cell_primary ">
@@ -839,7 +842,7 @@
 					<div class="weui_cell_hd fl" style="width: 30%;margin-left: 4%;margin-top: 10px;"><label class="weui_label">被保人信息</label></div>
 			        <label class="weui_cell weui_check_label fr"   style="width: 43%;" for="carInfo_man1">
 			            <div class="weui_cell_hd">
-			                <input type="checkbox" class="weui_check" flag="02" onchange="poftType(this)" name="checkbox1" id="carInfo_man1" checked="checked">
+			                <input type="checkbox" class="weui_check needsclick" flag="02" onchange="poftType(this)" name="checkbox1" id="carInfo_man1" checked="checked">
 			                <i class="weui_icon_checked"></i>
 			            </div>
 			            <div class="weui_cell_bd weui_cell_primary">
@@ -919,12 +922,12 @@
 					</div>-->
 					<div class="" style="margin-left: 30%;">
 						<input class="transCar" id="guohuyes" onchange="transChangeType(this)"  type="radio" name="guohu" style="display: none;" />
-						<label for="guohuyes c_666"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
+						<label for="guohuyes"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
 						
 					</div>
 					<div   style="margin-left: 20px;">
 						<input class="transCar" id="guohuno" onchange="transChangeType(this)"  type="radio" name="guohu" checked="checked" style="display: none;"/>
-						<label for="guohuno c_666"><span class="iconfont icon-yuan c_099"></span>否</label>
+						<label for="guohuno"><span class="iconfont icon-yuan c_099"></span>否</label>
 					</div>
 				</div>
 				<div class="weui_cell guohu_dates clearfix" style="width: 91%;padding-right:0 ;">
@@ -946,7 +949,7 @@
 					
 				</div>
 				<!--车辆信息-->
-				<div class="clearfix" style="padding:.5rem 0 ;width: 100%;border-top: 1px solid #ECECEC;">
+				<div class="clearfix chooseCar" style="padding:.5rem 0 ;width: 100%;border-top: 1px solid #ECECEC;">
 					<div class="fl" style="margin-left: 2%;">
 						<img class="_carImg" src="../images/car.png" width="90px"/>
 					</div>
@@ -979,8 +982,8 @@
 					<div class="coverBox bd bg_f8" >
 						<ul class="mui-table-view">
 							<li class="mui-table-view-cell ">
-								 <input type="radio" name="radio1" onchange ="oneChoose(this)" id="goodSelect4" class="goodSelect checkChild" style="display: none;"/>
-								 <label for="goodSelect4 " class="clearfix checkLabel">
+								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect4" class="goodSelect checkChild" style="display: none;"/>
+								 <label for="goodSelect4" class="clearfix checkLabel">
 								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
 								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
 										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
@@ -1001,8 +1004,52 @@
 								 
 							</li>
 							<li class="mui-table-view-cell carlist">
-								 <input type="radio" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
-								 <label for="goodSelect3 " class="clearfix checkLabel">
+								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
+								 <label for="goodSelect3" class="clearfix checkLabel">
+								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
+								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
+										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
+											<img class="carImg" src="../images/car.png" width="60px"/>
+										</div>
+										<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
+											<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
+											<p class="f14 c_666 pailiang">排量：2.977L</p>
+											<p class="f14 c_666 yearTime">年份：2014年</p>
+											<p class="f14 c_666 seatNum">座位数：6座</p>
+										</div>
+										<div class="fl tc" style="width: 20%;margin-top: 30px;">
+											<h5 class="c_999">参考价</h5>
+											<p class="c_ff7 f17 b400 carPrice">￥517555</p>
+										</div>
+									</div>
+								 </label>
+								 
+							</li>
+							<li class="mui-table-view-cell carlist">
+								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
+								 <label for="goodSelect3" class="clearfix checkLabel">
+								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
+								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
+										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
+											<img class="carImg" src="../images/car.png" width="60px"/>
+										</div>
+										<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
+											<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
+											<p class="f14 c_666 pailiang">排量：2.977L</p>
+											<p class="f14 c_666 yearTime">年份：2014年</p>
+											<p class="f14 c_666 seatNum">座位数：6座</p>
+										</div>
+										<div class="fl tc" style="width: 20%;margin-top: 30px;">
+											<h5 class="c_999">参考价</h5>
+											<p class="c_ff7 f17 b400 carPrice">￥517555</p>
+										</div>
+									</div>
+								 </label>
+								 
+							</li>
+							<li class="mui-table-view-cell carlist">
+								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
+								 <label for="goodSelect3" class="clearfix checkLabel">
 								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
 								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
 										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
@@ -1464,8 +1511,8 @@
 										<div id="activeList" class="activeList">
 											<ul class="mui-table-view">
 												<li class="mui-table-view-cell" >
-													 <input type="radio" name="active" onchange ="oneChoose(this)" id="activeList1" class="goodSelect price_activeInfo" style="display: none;"/>
-													 <label for="activeList1 " class="clearfix checkLabel">
+													 <input type="checkbox" name="active" onchange ="oneChoose(this)" id="activeList1" class="goodSelect price_activeInfo" style="display: none;"/>
+													 <label for="activeList1" class="clearfix checkLabel">
 													 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
 													 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #11bb33;color: #fff;border-radius: 10px;" >
 															<h4 style="padding: .5rem .5rem 0rem .5rem;">500元加油卡</h4>
@@ -1475,8 +1522,8 @@
 													 
 												</li>
 												<li class="mui-table-view-cell carlist">
-													 <input type="radio" name="active" onchange ="oneChoose(this)" id="activeList2" class="goodSelect price_activeInfo" style="display: none;"/>
-													 <label for="activeList2 " class="clearfix checkLabel">
+													 <input type="checkbox" name="active" onchange ="oneChoose(this)" id="activeList2" class="goodSelect price_activeInfo" style="display: none;"/>
+													 <label for="activeList2" class="clearfix checkLabel">
 													 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
 													 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #FFC320;color: #fff;border-radius: 10px;" >
 															<h4 style="padding: .5rem .5rem 0rem .5rem;">100元话费充值卡</h4>
@@ -1592,9 +1639,13 @@
 				item.next().eq(0).find(".icon").addClass("weui_icon_success");
 				item.next().eq(0).find(".icon").removeClass("weui_icon_circle");
 				
+			}else{
+				item.next().eq(0).find(".icon").removeClass("weui_icon_success");
+				item.next().eq(0).find(".icon").addClass("weui_icon_circle");
 			}
-			item.parent().siblings().find("input[type=radio]").next().find(".icon").removeClass("weui_icon_success");
-			item.parent().siblings().find("input[type=radio]").next().find(".icon").addClass("weui_icon_circle");
+			item.parent().siblings().find("input[type=checkbox]").attr("checked",false)
+			item.parent().siblings().find("input[type=checkbox]").next().find(".icon").removeClass("weui_icon_success");
+			item.parent().siblings().find("input[type=checkbox]").next().find(".icon").addClass("weui_icon_circle");
 				
 				
 		}
@@ -1700,8 +1751,13 @@
 //		  }
 //		});
 		
-		
 		$(function(){
+			/*初始化菜单栏*/
+			if($(window).scrollTop()>0){
+				$(".headerTitle").addClass("headerbox");
+			}else{
+				$(".headerTitle").removeClass("headerbox");
+			}
 			/*打开保险详情*/
 			  $(".question").on("click",function(){
 	            var title = $(this).find(".policyName").text();
@@ -1729,15 +1785,15 @@
      		$(this).parent().parent().hide();
      	})
 			
-//			FastClick.attach(document.body);
+//			FastClick.attach(document.getElementById("carInfo"));
 		/*页面滚动时改编header样式*/
-//			$('body')[0].addEventListener("drag",function(){
-//			     if($(window).scrollTop()>0){
-//						$(".headerTitle").addClass("headerbox");
-//					}else{
-//						$(".headerTitle").removeClass("headerbox");
-//					}
-//			});
+			$('body')[0].addEventListener("drag",function(){
+			     if($(window).scrollTop()>0){
+						$(".headerTitle").addClass("headerbox");
+					}else{
+						$(".headerTitle").removeClass("headerbox");
+					}
+			});
 //						
 			
 			
@@ -1766,32 +1822,41 @@
      			$(".btnList").css("top",btnTop+"px");
 				/*确定选择车辆*/
 				$(".carInfo_surebtn").on("click",function(){
-					var flag =1
-					for(var i=0;i<$(".checkChild").length;i++){
-						if($(".checkChild")[i].checked){
-							var item = $(".checkChild").eq(i).next(".checkLabel");
-							var carName =item.find(".carName").text();
-							var pailiang =item.find(".pailiang").text();
-							var yearTime =item.find(".yearTime").text();
-							var seatNum =item.find(".seatNum").text();
-							var carPrice =item.find(".carPrice").text();
-							var carImg =item.find(".carImg").attr("src");
-							flag+=1;
+					var  _item = $(this);
+					var nowTime = new Date().getTime();
+						var clickTime = _item.attr("ctime");
+						if( clickTime != 'undefined' && (nowTime - clickTime < 1100)){
+				        return false;
+				    }else{
+				    	_item.attr("ctime",nowTime);
+						var flag =1
+						for(var i=0;i<$(".checkChild").length;i++){
+	//						alert($(".checkChild")[i].checked)
+							if($(".checkChild")[i].checked){
+								var item = $(".checkChild").eq(i).next(".checkLabel");
+								var carName =item.find(".carName").text();
+								var pailiang =item.find(".pailiang").text();
+								var yearTime =item.find(".yearTime").text();
+								var seatNum =item.find(".seatNum").text();
+								var carPrice =item.find(".carPrice").text();
+								var carImg =item.find(".carImg").attr("src");
+								flag+=1;
+							}
 						}
-					}
-					if(flag==1){
-						Global.tool.toast("请选车辆");
-					}else{
-						$("._pailiang").text(pailiang);
-						$("._carName").text(carName);
-						$(".carInfo_carname").text(carName);
-						$("._yearTime").text(yearTime);
-						$("._seatNum").text(seatNum);
-						$("._carPrice").text(carPrice);
-						$("._carImg").attr("src",carImg)
-						$(".carListCover").hide();
-						
-						/*todo*/
+						if(flag==1){
+							Global.tool.toast("请选车辆");
+						}else{
+							$("._pailiang").text(pailiang);
+							$("._carName").text(carName);
+							$(".carInfo_carname").text(carName);
+							$("._yearTime").text(yearTime);
+							$("._seatNum").text(seatNum);
+							$("._carPrice").text(carPrice);
+							$("._carImg").attr("src",carImg)
+							$(".carListCover").hide();
+							
+							/*todo*/
+						}
 					}
 				})
 				/*关闭弹框*/
@@ -2002,15 +2067,15 @@
 				var html = "";
 				/*显示加载条*/
 				parentBox.html("");
-				html += '<div class="company_info" style="padding: 1rem 0;width: 100%;" >' +
-					'<div class="clearfix" style="width: 50%;">' +
+				html += '<div class="company_info clearfix" style="padding: 1rem 0;width: 100%;" >' +
+					'<div class="clearfix" style="width: 40%;">' +
 					'<img class="fl img" src=' + imgSrc + ' alt="Logo" width="40px"/>' +
 					'<h5 class="fl f15">' + companyName + '</h5>' +
 					'</div>' +
-					'<div class="fr" style="width: 50%;">'+
-					'<div class="clearfix">'+
-					'<button class="fr c_fff  reBtn"  companyName="平安车险">再次报价</button>'+
-					'<button class="fr c_fff  loseBtn pr"  companyName="平安车险"> <span class="iconfont icon-iconfontgantanhao pa" style="left:3px;color:#ccc"></span> 报价失败</button>'+
+					'<div class="fr" style="width: 60%;">'+
+					'<div class="clearfix pr">'+
+					'<button class="c_fff  reBtn pa"  companyName="平安车险">再次报价</button>'+
+					'<button class="c_fff  loseBtn pa"  companyName="平安车险"> <span class="iconfont icon-iconfontgantanhao pa" style="left:3px;color:#ccc;top:5px"></span> 报价失败</button>'+
 					'</div>'+
 					'</div>'+
 //							'<span class="fr c_ffc f18 totalPrice" companyName=' + companyName + '>￥345.00</span>' +
