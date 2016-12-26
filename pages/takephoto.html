@@ -10,7 +10,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 
 		<title>U惠保</title>
-		<link rel="stylesheet" href="../weui/dist/style/weui.min.css"/>
+		<link rel="stylesheet" href="../css/weui.min.css"/>
 		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
 		<style type="text/css">
 			.notice{
@@ -234,6 +234,9 @@
 				display: inline-block;
 				width: 16%;
 			}
+			.hotactive{
+				margin-left: .3rem;
+			}
 			.quiklyIcon{
 				width: 95%;
 				margin: 0 auto;
@@ -242,8 +245,17 @@
 			}
 		</style>
 	</head>
-	<body id="bodybox">
-		<header class="clearfix">
+	<body id="">
+		<header class="comm_headerTitle bg_099 clearfix">
+			<div class="pr">
+				<span class="iconfont icon-fanhui c_fff com_back pa"></span>
+				<h5 class="c_fff pa f18 com_title" >U惠保</h5>
+				<!--<a href="mycenter.html" class="iconfont icon-ren c_fff com_man fr"></a>-->
+				<a href="login.html" class=" c_fff com_login pa">登录</a>
+			</div>
+			
+		</header>
+		<header class="clearfix container">
 			<div id="focus" class="focus">
 				<div class="hd">
 					<ul></ul>
@@ -285,7 +297,7 @@
 				            </div>
 				            <div class="weui_cell_bd weui_cell_primary pr" >
 				                <input class="weui_input" id="carNumber" type="text"    placeholder="请输入车牌号"/>
-				                <i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+				                <i class="iconfont icon-close close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
 				            </div>
 				        </div>
 					<div class="weui_cell">
@@ -298,9 +310,9 @@
 					
 			</div>
 			<div class="agreement">
-		       <input type="radio" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
-				 <label for="goodSelect3 " class="clearfix checkLabel">
-				 	<span class="fl icon-iconfontwancheng c_999 icon iconfont" style="display: inline-block;margin-top: 15px;"></span>
+		       <input type="checkbox" name="checkbox" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
+				 <label for="goodSelect3" class="clearfix checkLabel">
+				 	<span class="fl icon-iconfontwancheng c_999 icon iconfont" style="display: inline-block;margin-top: 13px;"></span>
 				 	 <p class="clearfix fl">
 	                	<div class="fl company_info" >
 	                		<h5 class="fl">我已同意<a href="javascript:void(0)">《U-惠保用户服务协议》</a></h5>
@@ -371,7 +383,7 @@
 								<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
 								<div class="weui_cell_bd weui_cell_primary pr">
 									<input class="weui_input" id="_number" type="text"  placeholder="请输入证件号" />
-									<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+									<i class="iconfont icon-close close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
 								</div>
 							</div>
 							<div class="weui_cell" style="width: 87%;">
@@ -431,8 +443,8 @@
 	<script src="../js/lib/TouchSlide.1.1.js"></script>
 	<script type="text/javascript" src="../js/lib/global.js"></script>
 	<script>
-	var flag=0,daikuanFlag =0,guohuFlag=0;
-	var yunFlag = 0;
+	var flag=0,daikuanFlag =0,guohuFlag=0;//协议0-未阅读1-阅读，贷款车标志0-否，1-是；过户车标志0-否，1-是
+	var yunFlag = 0;//是否为运营车0-否，1-是
 	/*是否是运营车*/
 	function carType(item){
 		
@@ -603,8 +615,8 @@
 	       //提交
 			$("#rec_btn").click(function(){
 				window.location.href="flow.html";
-				var user_name = $("#user_name").val();
-				var carNumber = $("#carNumber").val();
+				var user_name = $("#user_name").val();//车主姓名
+				var carNumber = $("#carNumber").val();//车牌号
 				if(carNumber==''){
 					Global.tool.toast("请输入车牌号");
 				}
@@ -615,8 +627,8 @@
 					Global.tool.toast("请阅读“U-惠保服务协议”");
 				}
 				else{
-					//识别成功后跳转至onekey.html
-					window.location.href="onekey.html";
+					//识别成功后跳转至flow.html
+					window.location.href="flow.html";
 				}
 				
 				
@@ -660,9 +672,11 @@
 			})
 			
 			/*无续保点击事件*/
+			var classID=null;////证件类型
+			var idNo = null;//证件号
 			$(".newbtn").on("click",function(){
-				var classID = $("._select").val();//证件类型
-				var idNo = $("#_number").val();
+				classID = $("._select").val();//证件类型
+				idNo = $("#_number").val();
 				if(idNo==''){
 					Global.tool.toast("请输入证件号码");
 				}else{

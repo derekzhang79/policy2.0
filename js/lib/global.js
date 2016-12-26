@@ -359,10 +359,10 @@ Global.tool.toFixed = function(num,fix){
 Global.tool.checkedPhone =function(phoneNumber) {
 	var mobilereg = /^1\d{10}$/;
 	if (phoneNumber == '') {
-		Global.tool.toast('电话号码不能为空');
+		Global.tool.toast('手机号不能为空！');
 		return false;
 	} else if (phoneNumber && !mobilereg.test(phoneNumber)) {
-		Global.tool.toast('请输入有效的电话号码！');
+		Global.tool.toast('请输入有效的手机号！');
 		return false;
 
 	} else {
@@ -380,3 +380,7 @@ Global.method.getUrlParameter = function($name){
             r = window.location.search.substr(1).match(reg);
         if (r !== null) return (r[2]); return null;
     };
+    /*返回函数*/
+   $(".com_back").on("click",function(){
+   		history.go(-1);
+   })

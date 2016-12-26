@@ -14,12 +14,20 @@
 	function poftType(el) {
 		var item = $(el);
 		if(item[0].checked) {
+			item.next("i").addClass("icon-yuan");
+			item.next("i").addClass("c_099");
+			item.next("i").removeClass("icon-iconfontwancheng");
+			item.next("i").removeClass("c_999");
 			if(item.attr("flag") == "01") {
 				toubaoFlag = 1;
 			} else {
 				beiFlag = 1;
 			}
 		} else {
+			item.next("i").removeClass("icon-yuan");
+			item.next("i").removeClass("c_099");
+			item.next("i").addClass("icon-iconfontwancheng");
+			item.next("i").addClass("c_999");
 			if(item.attr("flag") == "01") {
 				toubaoFlag = 0;
 			} else {
@@ -152,12 +160,6 @@
 	//		});
 
 	$(function() {
-			/*初始化菜单栏*/
-			if($(window).scrollTop() > 0) {
-				$(".headerTitle").addClass("headerbox");
-			} else {
-				$(".headerTitle").removeClass("headerbox");
-			}
 			/*打开保险详情*/
 			$(".question").on("click", function() {
 				var title = $(this).find(".policyName").text();
@@ -185,16 +187,6 @@
 				$(this).parent().parent().hide();
 			})
 
-			//			FastClick.attach(document.getElementById("carInfo"));
-			/*页面滚动时改编header样式*/
-			$('body')[0].addEventListener("drag", function() {
-				if($(window).scrollTop() > 0) {
-					$(".headerTitle").addClass("headerbox");
-				} else {
-					$(".headerTitle").removeClass("headerbox");
-				}
-			});
-			//						
 
 			/*时间选择插件函数*/
 			$('.dateTime').on('focus', function() {
@@ -207,7 +199,7 @@
 				});
 			});
 
-			/*====================================================================车辆信息jsbegin*============================================/
+			/*====================================================================车辆信息jsbegin============================================*/
 			$(".chooseCar").on("click", function() {
 					$(".carListCover").show();
 					/*动态改编按钮位置*/
@@ -367,11 +359,10 @@
 
 				/*验证成功后处理事件*/
 				$(".poftPlan").addClass("btnActive").removeAttr("disabled");
+				location.href="#policyPlan"
 				$("#policyPlan").show();
-				$(".headerTitle").removeClass("headerbox");
-				document.getElementsByTagName('body')[0].scrollTop = 0;
-				$("#carInfo").hide();
-				//				alert(toubaoFlag)
+				var s_top =$("#carInfo").height()+20; 
+				$("body").animate({scrollTop: ''+s_top+'px'}, 3000);
 			})
 
 			/*车辆信息js end*/
@@ -411,21 +402,102 @@
 			/*保险方案下一步函数*/
 			$("#policyPlan_nextBtn").on("click", function() {
 					$(".countPrice").addClass("btnActive").removeAttr("disabled");
-					$("#policyPlan").hide();
-					$(".headerTitle").removeClass("headerbox");
+					location.href="#companyPrice";
 					/*todo*/
+					var s_top = $("#policyPlan").height()+$("#carInfo").height()+40;
 					$("#companyPrice").show();
+					$("body").animate({scrollTop: ''+s_top+'px'}, 3000);
 				})
 				/*保险方案js end*/
 
 			/*========================================================算保费js========================================================*/
-
+			/*报价*/
 			$(".youhui").on("click", function(e) {
-				e.stopPropagation()
+				e.stopPropagation();
 				var item = $(this);
 				lookPeice(item);
-
 			})
+			/*去核保*/
+			$('.goChecked').on("click",function(){
+				location.href="#checkedPolicy";
+				var s_top = $("#policyPlan").height()+$("#carInfo").height()+$("#companyPrice").height()+40;
+				$("#checkedPolicy").slideDown("slow");
+				$("body").animate({scrollTop: ''+s_top+'px'}, 3000);
+				//动态赋值
+				var nowHeight = $(".front_box").width()*1.68*0.50+"px";
+				$(".jiaImg").height(nowHeight);
+				$("._imgBox").height(nowHeight);
+			})
+			//====================================================核保及支付JS==========================================================
+			//动态赋值
+				var nowHeight = $(".front_box").width()*1.68*0.50+"px";
+				$(".jiaImg").height(nowHeight);
+				$("._imgBox").height(nowHeight);
+			//展开核保成功相关信息
+			$(".checkedTitle").on("click",function(){
+				var checkedItem = $(this);
+				checkedItem.next().slideToggle("slow");
+				checkedItem.find('.iconfont').toggleClass("transformRotate");
+			})
+			//删除资料图片
+			$(".delImg").on("click",function(){
+				var _delItem = $(this);
+				_delItem.parent().hide();
+			})
+			//新增地址
+			$(".addAddrBtn").on("click",function(){
+				$("._addAddr").slideDown("slow");
+			})
+			/*获取验证码*/
+			$(".get").on("click",function(){
+				var phoneNum = $("#phoneNum").val();
+				var timer =null;
+				var item = $(this);
+				if(Global.tool.checkedPhone(phoneNum)){
+					var i=60;
+					$(".btn_cover").css("display","block");
+					item.text(""+i+"s");
+					timer=setInterval(function(){
+						
+						i--;
+						item.text(""+i+"s");
+						if(i==0){
+							clearInterval(timer);
+							item.text("获取验证码");
+							$(".btn_cover").css("display","none");
+							i=60;
+						}
+					},1000);
+					/*todo数据请求*/
+					
+				}
+			})
+			//关闭核保信息
+			$(".closeChecked_btn").on("click",function(){
+				$('#checkedPolicy').hide();
+			})
+			/*投保时间提醒*/
+			$(".timeInfo").on("click", function() {
+				var nowTime = new Date().getTime();
+				var clickTime = $(this).attr("ctime");
+				if(clickTime != 'undefined' && (nowTime - clickTime < 1100)) {
+					return false;
+				} else {
+					$(this).attr("ctime", nowTime);
+					var types = $(this).attr("types");
+					if(types == "1") {
+						Global.tool.alert("提示", "为确保您的强制险起保时间与您上一次投保时间吻合，我们的客服人员会在出单前与您取得联系是否同意校正。");
+					} else {
+						Global.tool.alert("提示", "为确保您的商业险起保时间与您上一次投保时间吻合，我们的客服人员会在出单前与您取得联系是否同意校正。");
+					}
+
+					$(".sure").on("click", function() {
+						$(".weui_dialog_alert").remove();
+					})
+				}
+			})
+			
+			
 
 			/*标题按钮函数*/
 			$('.titleBtn').on("click", function() {
@@ -434,26 +506,48 @@
 				var closeTab = item.siblings();
 				item.next().removeClass("btnActive");
 				item.next().attr("disabled", "disabled");
-				$("#" + nowTab).show();
-				for(var i = 0; i < closeTab.length; i++) {
-					var close = closeTab.eq(i).attr("type");
-					$("#" + close).hide();
+				location.href="#"+ nowTab;
+				
+				if(nowTab=="carInfo"){
+					$("body").animate({scrollTop: '0px'}, "slow");
+				}else{
+					var s_top =$("#carInfo").height()+20; 
+					$("body").animate({scrollTop: ''+s_top+'px'}, "slow");
 				}
-
 			})
 		})
 		/*==================================================报价函数=======================================================*/
 	function lookPeice(item) {
 		var item = item;
+		item.html("正在报价...")
 		var parentBox = item.parent().parent().parent().parent();
 		var companyName = item.attr("companyName"); //公司名字
 		var imgSrc = item.parent().parent().prev().find(".img").attr("src"); //logo路劲
-		//					parentBox.html("");
-		//					item.parent().html("");		
-		item.parent().html("<div class='bar mint active fr' style='z-index:999999' data-percent='100' data-skill='正在报价'></div>");
+		/*进度条显示*/
+		var progressTimer = null;
+		if (item.hasClass('weui_btn_disabled')) {
+            return;
+        }
+
+        item.addClass('weui_btn_disabled');
+        item.attr("disabled","disabled");
+
+        var progress = 0;
+        var $progress = item.parent().parent().parent().parent().find('.js_progress');
+
+        function next() {
+            $progress.css({width: progress + '%'});
+            progress = ++progress % 100;
+        }
+        progressTimer = setInterval(function(){
+        	 next();
+        },30);
+       
 		setTimeout(function() {
 			var html = "";
-			/*显示加载条*/
+			/*ajax请求成功后关闭进度条*/
+			clearInterval(progressTimer);
+			/*显示*/
 			parentBox.html("");
 			html += '<div class="company_info clearfix" style="padding: 1rem 0;width: 100%;" >' +
 				'<div class="clearfix" style="width: 40%;">' +
@@ -479,7 +573,12 @@
 
 				'<button class="c_fff lookInfo">查看明细</button>' +
 				'</div>' +
-				'</div>'
+				'</div>'+
+				'<div class="weui_progress pa" style="bottom: 0px;width: 100%;">'+
+		        '<div class="weui_progress_bar">'+
+	            '<div class="weui_progress_inner_bar js_progress" style="width: 0%;"></div>'+
+		        '</div>'+
+			    '</div>'
 			parentBox.html(html);
 			parentBox.addClass("showBtn");
 			/*再次报价*/
@@ -491,11 +590,14 @@
 				/*投保详情todo*/
 
 			$(".lookInfo").on("click", function() {
-				$(this).parent().parent().parent().next().show();
-				$(this).parent().parent().parent().hide();
+				var _companyIntem = $(this)
+				_companyIntem.parent().parent().parent().next().slideDown("slow");
+				_companyIntem.parent().parent().parent().slideUp("slow");
+
+				
 				$(".shouBtn").on("click", function() {
 						$(this).parent().hide();
-						$(this).parent().prev().show();
+						$(this).parent().prev().slideDown("slow");
 					})
 					/*兑换优惠码*/
 				$(".youhuiBtn").on("click", function(e) {

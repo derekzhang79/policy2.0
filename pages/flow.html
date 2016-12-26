@@ -1,771 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 		<title>U惠保</title>
-		<link rel="stylesheet" href="../weui/dist/style/weui.min.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
-		
-		 <link href="../css/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.android.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.ios-classic.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.jqm.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.sense-ui.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.frame.wp.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.scroller.android.css" rel="stylesheet" type="text/css" />
-	    <link href="../css/css/mobiscroll.scroller.android-holo.css" rel="stylesheet" type="text/css" />
-	    
-	    <script src="../js/lib/mui.js"></script>
-		<script type="text/javascript" src="../js/lib/jquery-1.7.min.js"></script>
-		
-		 <script src="../js/js/mobiscroll.core.js"></script>
-	    <script src="../js/js/mobiscroll.frame.js"></script>
-	    <script src="../js/js/mobiscroll.scroller.js"></script>
-	
-	    <script src="../js/js/mobiscroll.util.datetime.js"></script>
-	    <script src="../js/js/mobiscroll.datetimebase.js"></script>
-	    <script src="../js/js/mobiscroll.datetime.js"></script>
-		<script src="../js/js/mobiscroll.android-holo-light.js"></script>
-	    <script src="../js/js/mobiscroll.wp-light.js"></script>
-	    <script src="../js/js/mobiscroll.mobiscroll-dark.js"></script>
-		<script src="../js/js/i18n/mobiscroll.i18n.zh.js"></script>
-		
-		<style type="text/css">
-		.weui_input{
-			color: #999;
-		}
-		
-		.headerbox{
-			
-			/*left: 8%;*/
-			padding: 1rem 0;
-			
-			background:rgba(248,248,248,1);
-			position: fixed;
-			top: -10px;
-			width: 100%;
-			z-index: 2;
-		}
-		header{
-				margin-top: .5rem;
-			}
-			header>button{
-				display: inline-block;
-				width: 30%;
-				height: 35px;
-				border:1px solid #ccc;
-				background: none;
-				color: #CECECE;
-				border: none;
-				border-bottom: 5px solid #CECECE;
-				font-size: 17px !important;
-				/*border-radius: 20px;*/
-				/*background: #fff;*/
-			}
-			.btnActive{
-				color: #009944;
-				border-bottom: 5px solid #009944;
-			}
-		select {
+		<link rel="stylesheet" href="../weui/dist/style/weui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css" />
 
-			direction: rtl;
-			
-			}
-			*{
-				margin: 0;
-				padding: 0;
-			}
-			
-			/*开关按钮*/
-	        .weui_switch {
-	            -webkit-appearance: none;
-	            appearance: none;
-	            position: relative;
-	            width: 78px;
-	            height: 32px;
-	            border: 1px solid #f8f8f8;
-	            outline: 0;
-	            border-radius: 16px;
-	            box-sizing: border-box;
-	            background: #F8F8F8;
-	        }
-	        .weui_switch:before {
-	            content: " ";
-	            position: absolute;
-	            top: 0;
-	            left: 0;
-	            width: 76px;
-	            height: 30px;
-	            border-radius: 15px;
-	            background-color: #ccc;
-	            -webkit-transition: -webkit-transform .3s;
-	            transition: -webkit-transform .3s;
-	            transition: transform .3s;
-	            transition: transform .3s, -webkit-transform .3s;
-	        }
-	        .weui_switch:after {
-	            content: " ";
-	            position: absolute;
-	            top: 0;
-	            left: 0;
-	            width: 30px;
-	            height: 30px;
-	            border-radius: 15px;
-	            background-color: #f8f8f8;
-	            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-	            -webkit-transition: -webkit-transform .3s;
-	            transition: -webkit-transform .3s;
-	            transition: transform .3s;
-	            transition: transform .3s, -webkit-transform .3s;
-	        }
-	        .weui_switch:checked {
-	            border-color: #04BE02;
-	            background-color: #04BE02;
-	        }
-	        .weui_switch:checked:before {
-	            -webkit-transform: scale(0);
-	            transform: scale(0);
-	        }
-	        .weui_switch:checked:after {
-	            -webkit-transform: translateX(48px);
-	            transform: translateX(48px);
-	        }
-	        .tou_info{
-	            top: 8px;
-	            left: 35px;
-	        }
-	        select {
-	
-	            direction: rtl;
-	
-	        }
-	        .icon-icon-question{
-	        		color:#999 !important;
-	        }
-		/*end*/	
-			
-			/*弹窗样式*/
-			.carListCover{
-				display: block;
-			}
-			/*新增*/
-			.cover{
-				height: 100%;
-			    width: 100%;
-			    position: fixed;
-			    left: 0;
-			    right: 0;
-			    top: 0;
-			    bottom: 0;
-			    background: rgba(0, 0, 0, 0.2);
-			    overflow: hidden;
-			    z-index: 3;
-			   /*display: none;*/
-				
-				 
-			}
-			.scrollBox{
-				max-height:300px;
-			    width: 90%;
-			    position: fixed;
-			    left: 5%;
-			    right: 0;
-			    top: 8rem;
-			    background: rgba(0, 0, 0, 0.2);
-			    overflow-y: scroll;
-			    z-index: 4;
-			    border-bottom-left-radius: 5px;
-			     border-bottom-right-radius: 5px;
-			    /*border-radius: 5px;*/
-			    /*display: none;*/
-				
-			}
-			/*.scrollBox::-webkit-scrollbar{width:5px; height:5px;}
-			.scrollBox::-webkit-scrollbar-button{width:0;height:0;}
-			.scrollBox::-webkit-scrollbar-corner{display:block; }
-			.scrollBox::-webkit-scrollbar-thumb{background-clip:padding-box;background-color:rgba(233,55,145,.8);border-radius:8px;}//还可以设置滚动条的颜色
-			.scrollBox::-webkit-scrollbar-thumb:hover{background-clip:padding-box;background-color:rgba(255,255,255,0);border-radius:8px;}*/
-			.weui_cells{
-				margin-top: 0;
-				
-			}
-			.btnList{
-				position: fixed;
-				top: 500px;
-				width:90%;
-				left: 5%;
-				border-radius: 10px;
-				z-index: 4;
-			}
-			.cancel{
-				width:50%;
-				border-radius: 10px;
-				background: #f8f8f8;
-				font-size: 17px;
-				color: #666;
-				padding:.5rem 0;
-			}
-			.newbtn{
-				width:50%;
-				border-radius: 10px;
-				background: #f8f8f8;
-				font-size: 17px;
-				color: #666;
-				padding: .5rem 0;
-			}
-			.newAddr{
-				display: none;
-			}
-			.addrList{
-				padding: 18px 0;
-			}
-			.coverTitle{
-				padding: 13px 0;
-				 z-index: 4;
-				top: 80px;
-				left: 5%;
-				width: 90%;
-				position: fixed;
-				background: #009944;
-				color: #fff;
-			}
-			.coverTitle>h5{
-				font-size: 17px;
-			}
-			._closeBtn{
-				top: 5px;
-				font-size: 1.5rem;
-				right: 15px;
-			}
-			/*弹窗样式结束*/
-			
-			
-			
-			
-		/*车辆信息样式begin*/
-			
-			.carNumber{
-				/*border: 3px dashed #009944;*/
-				/*width: 98%;
-				margin-top: 20px;*/
-				padding: .2rem 0;
-				font-weight: 400;
-				font-size: 2rem;
-			}
-			.carInfo>.carHost{
-				padding: .5rem;
-			}
-			/*投保人信息*/
-			.carInfo_man{
-				background: #F8F8F8;
-			}
-			.carInfo_man .weui_cells:after{
-				border: none;
-			}
-			.carInfo_man .weui_cells:before{
-				border: none;
-			}
-			.carInfo_man .weui_cell{
-			}
-			.carInfo_man .weui_cell:after{
-				border: none;
-			}
-			.carInfo_man .weui_cell:before{
-				border: none;
-			}
-			.carInfo_infoList{
-				display: none;
-			}
-			/*车辆信息*/
-			.carInfo_intr p{
-				line-height: 15px;
-			}
-			/*选择车辆*/
-			#carInfo{
-				display: block;
-			}
-			#carInfo .mui-table-view-cell{
-				padding: 1rem .5rem;
-				background: #fff;
-			}
-			.carlist{
-				margin-top: 5px;
-			}
-			.guohu_dates{
-				display: none;
-			}
-			/*车辆信息弹窗*/
-			.carListCover{
-				display: none;
-			}
-			/*车辆信息样式结束*/
-			/*保险方案样式开始*/
-			#policyPlan{
-				margin-top: 15px;
-				display: none;
-			}
-			.policyTime>h4{
-				margin-left: 3%;
-				padding:0 .2rem;
-			}
-			.buji{
-				display:inline-block;
-				padding: .1rem;
-				margin-left: 10px;
-				color: #fff;
-				background: #009944;
-				font-size: 11px;
-				border-radius: 3px;
-			}
-			.policyList{
-				margin-top: 15px;
-			}
-			.policyTitle{
-				margin-top: 15px;
-				display: -webkit-box;
-			}
-			.policyTitle>span{
-				text-align: center;
-				display: block;
-				border-right: 1px solid #ECECEC;
-			    padding: 10px 0;
-			    -webkit-box-flex: 1;
-			    background: #fff;
-			}
-			.planActive{
-				border-bottom: 5px solid #009944;
-			}
-			/*强制险*/
-			#compulsory{
-				width: 90%;
-				margin: 5px auto;
-			}
-			#compulsory>h5,#businessRisks>h5{
-				padding: .5rem;
-				color: #666;
-			}
-			.compulsoryList{
-				background: #fff;
-				border-radius: 10px;
-			}
-			.compulsoryList .weui_cells:before,.businessRisksList .weui_cells:before{
-				border: none;
-			}
-			.compulsoryList .weui_cells:last-child:after,.businessRisksList .weui_cells:last-child:after{
-				border: none;
-			}
-			/*商业险*/
-			#businessRisks{
-				width: 90%;
-				margin: 5px auto;
-			}
-			#changePlan{
-				padding: .5rem;
-				border: 1px solid #009944;
-				border-radius: 5px;
-				color: #009944;
-				background: none;
-			}
-			.list{
-				border-bottom: .5px solid #CECECE;
-			}
-			.list:last-child{
-				border: none;
-			}
-			.self-selection .weui_cells:before,.policyListCover.weui_cells:before{
-				border: none;
-			}
-			.self-selection .weui_cells:after,.policyListCover.weui_cells:after{
-				border: none;
-			}
-			.policyListCover{
-				display: none;
-			}
-			.self-selection{
-				display: none;
-			}
-			/*保险方案样式end*/
-			/*算保费样式*/
-			#companyPrice{
-				display:none;
-			}
-			#companyPrice ul li {
-				list-style: none;
-			}
-			
-			#companyPrice .company_info img {
-				margin-left: 5px;
-			}
-			
-			#companyPrice .company_info h5 {
-				margin-left: 5px;
-				margin-top: 3px;
-				font-weight: 600;
-				color: #333;
-			}
-			
-			#companyPrice .company_info {
-				border-bottom: 1px solid #e3e3e3;
-				margin-top: 2px;
-			}
-			
-			#companyPrice .youhui {
-				padding: .5rem 1rem;
-				border-radius: 5px;
-				margin-top: -30px;
-				font-size: 12px;
-				/*border: .5px solid #04BE02;*/
-				border: none;
-				margin-right: .5rem;
-				background: #009944;
-			}
-			.reBtn{
-				padding: .5rem 1rem;
-				border-radius: 5px;
-				right: .8rem;
-				top: -30px;
-				/*margin-top: -15%;*/
-				font-size: 12px;
-				/*border: .5px solid #04BE02;*/
-				border: none;
-				/*margin-right: .5rem;*/
-				background: #FF7F00;
-			}
-			.loseBtn{
-				padding: .5rem 1.3rem;
-				border-radius: 5px;
-				right: 6rem;
-				top: -30px;
-				/*margin-top: -15%;*/
-				font-size: 12px;
-				/*border: .5px solid #04BE02;*/
-				border: none;
-				/*margin-right: 5.5rem;*/
-				background: #ECECEC;
-				color: #ccc;
-			}
-			
-			#companyPrice .mui-table-view-cell {
-				width:99%;
-				margin: 10px 0;
-			}
-			
-			#companyPrice .companyBox {
-				width: 100%;
-				/*padding: .8rem 0rem;*/
-				background: #fff;
-				border: 1px solid #e3e3e3;
-				border-radius: 3px;
-			}
-			
-			#companyPrice .oldPrice {
-				text-decoration: line-through;
-				margin-left: 3px;
-			}
-			
-			#companyPrice .platformACtive {
-				padding: 0 .5rem .8rem;
-			}
-			
-			#companyPrice .activeTitle {
-				background: #009944;
-				width: 30%;
-			}
-			
-			#companyPrice .activeInfo {
-				width: 62%;
-			}
-			
-			#companyPrice .zhanwei {
-				margin-top: 10px;
-				height: 50px;
-				width: 2%;
-				background: #009944;
-				border: 1px solid #009944;
-				border-left: 2px dashed #fff;
-			}
-			
-			#companyPrice .activeTitle,
-			#companyPrice .activeInfo {
-				height: 50px;
-				margin-top: 10px;
-				text-align: center;
-				line-height: 50px;
-				border: 1px solid #009944;
-			}
-			
-			#companyPrice .totalPrice {
-				padding: .5rem;
-				margin-top: -33px;
-				/*border: .5px solid #04BE02;*/
-				margin-right: .5rem;
-			}
-			/*进度条*/
-			
-			.bar {
-				height: 30px;
-				width: 0;
-				transition: width 1.2s ease-in-out;
-				position: relative;
-				margin: -37px 0;
-				border-radius: 4px;
-			}
-			
-			@media(max-width: 350px) {
-				.bar {
-					margin: 2.5rem 0 0.5rem;
-				}
-			}
-			
-			 .bar.mint {
-				 background-color: #14c3a2;
-				  background-image: repeating-linear-gradient(-45deg, #14c3a2, #14c3a2 30px, #22e8c3 30px, #22e8c3 60px);
-				  background-size: 600px 100%;
-				  animation: barberpole 12s linear infinite;
-				  border-bottom: 0.2rem solid #0d7e68;
-			}
-			
-			.bar.active:after,
-			.bar.active:before {
-				opacity: 1;
-			}
-			
-			.bar:before {
-				content: attr(data-skill);
-				display: block;
-				position: absolute;
-				top: -5px;
-				left: 13%;
-				padding: 10px;
-				height: 30px;
-				font-style: italic;
-				color: #fff;
-				opacity: 0;
-				-webkit-transition: opacity 2s 0.6s;
-				transition: opacity 2s 0.6s;
-				z-index: 9999999;
-			}
-			
-			.bar:after {
-				/*content: attr(data-percent) "%";*/
-				display: block;
-				position: absolute;
-				top: 0;
-				right: 0;
-				height: 40px;
-				padding: 10px;
-				opacity: 0;
-				transition: opacity 2s 0.6s;
-			}
-			
-			@media(max-width: 350px) {
-				.bar:after {
-					left: 0;
-				}
-			}
-			
-			@-webkit-keyframes barberpole {
-				from {
-					background-position: 0% 0%;
-				}
-				to {
-					background-position: 600px 0%;
-				}
-			}
-			
-			@-moz-keyframes barberpole {
-				from {
-					background-position: 0% 0%;
-				}
-				to {
-					background-position: 600px 0%;
-				}
-			}
-			@-ms-keyframes name{
-				from {
-					background-position: 0% 0%;
-				}
-				to {
-					background-position: 600px 0%;
-				}
-			}
-			@keyframes barberpole {
-				from {
-					background-position: 0% 0%;
-				}
-				to {
-					background-position: 600px 0%;
-				}
-			}
-			
-			.bar.active[data-percent="100"] {
-				width: 80%;
-				margin: -30px 10% 0 0;
-			}
-			/*投保详情*/
-			
-			#companyPrice header div {
-				width: 100%;
-			}
-			
-		#companyPrice header {
-				padding: 1rem;
-				background: #fff;
-				/*background: #F8F8F8;*/
-			}
-			
-			#companyPrice .jiaoqiang {
-				padding: .8rem 1rem;
-			}
-			
-			#companyPrice .busi_policy>h4 {
-				padding: .8rem 1rem;
-			}
-			
-			#companyPrice .userName,
-			#companyPrice .money {
-				margin-top: 3px;
-				margin-left: 3%;
-			}
-			
-			#companyPrice .tel,
-			#companyPrice .addr {
-				margin-top: 10px;
-				padding: 1rem;
-			}
-			
-			#companyPrice .notice {
-				margin-right: 15px;
-				color: #04BE02;
-				border: 1px solid #04BE02;
-				font-size: 12px;
-				padding: .3rem;
-				border-radius: 2px;
-			}
-			/*新增*/
-			
-			#companyPrice .info_title {
-				background: #fff;
-			}
-			
-			#companyPrice .info_title>div {
-				display: inline-block;
-				width: 33.3%;
-				padding: .3rem 0;
-			}
-			
-			#companyPrice .bus_info>div {
-				width: 33.3%;
-				/*text-align: center;*/
-			}
-			
-			#companyPrice .weui_cell_primary {
-				font-size: 12px;
-			}
-			
-			#companyPrice .weui_cells {
-				margin: 0 auto;
-				width: 98%;
-				border-radius: 3px;
-			}
-			/*.weui_cells:before,.weui_cells:after{
-				border: none;
-			}*/
-			
-			#companyPrice h4 {
-				font-weight: 500;
-			}
-			
-			#companyPrice .coverBox {
-				display: none;
-			}
-			
-			#companyPrice .transformRotate {
-				-webkit-transform: rotate(180deg);
-				transform: rotate(180deg);
-				transition-duration: .5s, .5s, .5s;
-			}
-			
-			#companyPrice .priceInfo {
-				/*border-top: 1px solid #e3e3e3;*/
-				padding: 0 0 1rem;
-			}
-			
-			#companyPrice .lookInfo {
-				padding: .5rem 1rem;
-				border-radius: 5px;
-				font-size: 12px;
-				/*border: .5px solid #04BE02;*/
-				border: none;
-				left: 39%;
-				bottom: -13px;
-				background: #009944;
-			}
-			
-			#companyPrice .youhuiBtn {
-				padding: .5rem;
-				border-radius: 5px;
-				font-size: 12px;
-				color: #fff;
-				border: none;
-				margin-top: -8px;
-				background: #009944;
-			}
-			
-			#companyPrice .alredYouhui {
-				padding: .5rem;
-				border-radius: 5px;
-				font-size: 12px;
-				color: #fff;
-				border: none;
-				margin-top: -8px;
-				background: #AE0000;
-			}
-			
-			#companyPrice .weui_cells:before {
-				border: none;
-			}
-			
-			#companyPrice .weui_cells:after {
-				border: none;
-			}
-			#companyPrice ._dikou{
-				display: none;
-			}
-			/*算保费样式end*/
+		<link href="../css/css/mobiscroll.animation.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.icons.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.android.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.android-holo.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.ios-classic.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.ios.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.jqm.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.sense-ui.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.frame.wp.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.scroller.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.scroller.android.css" rel="stylesheet" type="text/css" />
+		<link href="../css/css/mobiscroll.scroller.android-holo.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" href="../css/flow.css" />
+
+		<script src="../js/lib/mui.js"></script>
+		<script type="text/javascript" src="../js/lib/jquery-1.7.min.js"></script>
+
+		<script src="../js/js/mobiscroll.core.js"></script>
+		<script src="../js/js/mobiscroll.frame.js"></script>
+		<script src="../js/js/mobiscroll.scroller.js"></script>
+
+		<script src="../js/js/mobiscroll.util.datetime.js"></script>
+		<script src="../js/js/mobiscroll.datetimebase.js"></script>
+		<script src="../js/js/mobiscroll.datetime.js"></script>
+		<script src="../js/js/mobiscroll.android-holo-light.js"></script>
+		<script src="../js/js/mobiscroll.wp-light.js"></script>
+		<script src="../js/js/mobiscroll.mobiscroll-dark.js"></script>
+		<script src="../js/js/i18n/mobiscroll.i18n.zh.js"></script>
+
+		<style type="text/css">
+
 		</style>
 	</head>
+
 	<body id="bodybox">
-		<header class="tc  headerTitle">
+		<header class="comm_headerTitle bg_099 clearfix">
+			<div class="pr">
+				<span class="iconfont icon-fanhui c_fff com_back pa"></span>
+				<h5 class="c_fff pa f18 com_title">U惠保</h5>
+				<a href="mycenter.html" class="iconfont icon-ren c_fff com_man pa"></a>
+				<!--<a href="login.html" class=" c_fff com_login pa">登录</a>-->
+			</div>
+
+		</header>
+		<div class="tc  headerTitle container">
 			<button class="btnActive f14 car titleBtn" type="carInfo">1.车辆信息</button>
 			<button class="f14 poftPlan titleBtn" disabled="disabled" type="policyPlan">2.保险方案</button>
 			<button class="f14 countPrice titleBtn" disabled="disabled" type="companyPrice">3.算保费</button>
-		</header>
-		<!--车辆信息begin-->
-		<div id="carInfo" class="carInfo">
-			<div style="padding: .3rem ;border: 3px solid #009944;margin:10px auto 0;width: 95%; ">
-				<p class="carNumber tc bg_099 f18 b400 c_fff">
-					川A34545
-				</p>
-			</div>
-			
-			<h5 class="carHost c_099 f15 b400">车主信息</h5>
-			<div class="bg_f">
-				<div class="weui_cell" style="width: 87%;">
-					<div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="carHost_name" type="text"  placeholder="请输入车主姓名"  />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-					</div>
+		</div>
+
+		<div class="_policyBox">
+			<!--车辆信息begin-->
+			<div id="carInfo" class="carInfo">
+				<div style="padding: .3rem ;border: 3px solid #009944;margin:10px auto 0;width: 95%; ">
+					<p class="carNumber tc bg_099 f18 b400 c_fff">
+						川A34545
+					</p>
 				</div>
-				<div class="weui_cell weui_cell_select weui_select_before pr" style="width:90%">
-					<label class="weui_label f16" style="margin-left: 4%;width:45%;margin-right:0 !important;">证件类型:</label>
+
+				<h5 class="carHost c_099 f15 b400">车主信息</h5>
+				<div class="bg_f">
+					<div class="weui_cell" style="width: 87%;">
+						<div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="carHost_name" type="text" placeholder="请输入车主姓名" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
+					</div>
+					<div class="weui_cell weui_cell_select weui_select_before pr" style="width:90%">
+						<label class="weui_label f16" style="margin-left: 4%;width:45%;margin-right:0 !important;">证件类型:</label>
 						<select class="weui_select _select c_999 f16" style="width:55%;padding-left:0 !important;" name="select2">
 							<option value="01">身份证</option>
 							<option value="02"> 驾驶证</option>
@@ -780,40 +93,40 @@
 							<option value="24">其他证件</option>
 						</select>
 						<span class="iconfont icon-xiajiantou pa c_999" style="right:2%;top:12px"></span>
-				</div>
-				<div class="weui_cell" style="width: 87%;">
-					<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="carInfo_number" type="text"   placeholder="请输入证件号" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+					</div>
+					<div class="weui_cell" style="width: 87%;">
+						<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="carInfo_number" type="text" placeholder="请输入证件号" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
 					</div>
 				</div>
-			</div>
-			<!--被保人信息-->
-			<div class="carInfo_man" style="width: 97%;" >
-				<div class="weui_cells weui_cells_checkbox bg_f8" style="margin-top: 0;width: 100%;">
-					<div class="weui_cell_hd fl" style="width: 30%;margin-left: 4%;margin-top: 10px;"><label class="weui_label">投保人信息</label></div>
-			        <label class="weui_cell weui_check_label fr"  style="width: 43%;" for="carInfo_man">
-			            <div class="weui_cell_hd">
-			                <input type="checkbox" class="weui_check needsclick" flag="01" onchange="poftType(this)" name="checkbox1" id="carInfo_man" checked="checked">
-			                <i class="weui_icon_checked"></i>
-			            </div>
-			            <div class="weui_cell_bd weui_cell_primary ">
-			                <p class="c_666 f15">与车主为同一人</p>
-			            </div>
-			        </label>
-			    </div>
-			</div>
-			<div class="bg_f carInfo_infoList toubao">
-				<div class="weui_cell" style="width: 87%;">
-					<div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="toubao_name" type="text"  placeholder="请输入投保人姓名"  />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+				<!--被保人信息-->
+				<div class="carInfo_man" style="width: 97%;">
+					<div class="weui_cells weui_cells_checkbox bg_f8" style="margin-top: 0;width: 100%;">
+						<div class="weui_cell_hd fl" style="width: 20%;margin-left: 1rem;margin-top: 10px;"><label class="weui_label f15">投保人信息</label></div>
+						<label class="weui_cell weui_check_label fr" style="width: 43%;" for="carInfo_man">
+				            <div class="weui_cell_hd">
+				                <input type="checkbox" class="weui_check needsclick" flag="01" onchange="poftType(this)" name="checkbox1" id="carInfo_man" checked="checked">
+				                <i class="icon-yuan c_099 icon iconfont"></i>
+				            </div>
+				            <div class="weui_cell_bd weui_cell_primary ">
+				                <p class="c_666 f15">与车主为同一人</p>
+				            </div>
+				        </label>
 					</div>
 				</div>
-				<div class="weui_cell weui_cell_select weui_select_before pr" style="width:90%">
-					<label class="weui_label f16" style="margin-left: 4%;width:45%;margin-right:0 !important;">证件类型:</label>
+				<div class="bg_f carInfo_infoList toubao">
+					<div class="weui_cell" style="width: 87%;">
+						<div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="toubao_name" type="text" placeholder="请输入投保人姓名" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
+					</div>
+					<div class="weui_cell weui_cell_select weui_select_before pr" style="width:90%">
+						<label class="weui_label f16" style="margin-left: 4%;width:45%;margin-right:0 !important;">证件类型:</label>
 						<select class="weui_select toubao_select c_999 f16" style="width:55%;padding-left:0 !important;" name="select2">
 							<option value="01">身份证</option>
 							<option value="02"> 驾驶证</option>
@@ -828,41 +141,41 @@
 							<option value="24">其他证件</option>
 						</select>
 						<span class="iconfont icon-xiajiantou pa c_999" style="right:2%;top:12px"></span>
-				</div>
-				<div class="weui_cell" style="width: 87%;">
-					<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="toubao_number" type="text"   placeholder="请输入证件号" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+					</div>
+					<div class="weui_cell" style="width: 87%;">
+						<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="toubao_number" type="text" placeholder="请输入证件号" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="carInfo_man"style="width: 97%;">
-				<div class="weui_cells weui_cells_checkbox bg_f8" style="margin-top: 0;width: 100%;">
-					<div class="weui_cell_hd fl" style="width: 30%;margin-left: 4%;margin-top: 10px;"><label class="weui_label">被保人信息</label></div>
-			        <label class="weui_cell weui_check_label fr"   style="width: 43%;" for="carInfo_man1">
-			            <div class="weui_cell_hd">
-			                <input type="checkbox" class="weui_check needsclick" flag="02" onchange="poftType(this)" name="checkbox1" id="carInfo_man1" checked="checked">
-			                <i class="weui_icon_checked"></i>
-			            </div>
-			            <div class="weui_cell_bd weui_cell_primary">
-			                <p class="c_666 f15">与车主为同一人</p>
-			            </div>
-			        </label>
-			    </div>
-				
-			</div>
-			<div class="bg_f carInfo_infoList beibao" style="margin-bottom: .5rem;">
-				<div class="weui_cell"  style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="beibao_name" type="text"  placeholder="请输入被保人姓名" />
-						
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+				<div class="carInfo_man" style="width: 97%;">
+					<div class="weui_cells weui_cells_checkbox bg_f8" style="margin-top: 0;width: 100%;">
+						<div class="weui_cell_hd fl" style="width: 30%;margin-left: 1rem;margin-top: 5px;"><label class="weui_label f15">被保人信息</label></div>
+						<label class="weui_cell weui_check_label fr" style="width: 43%;margin-top: -6px;" for="carInfo_man1">
+				            <div class="weui_cell_hd">
+				                <input type="checkbox" class="weui_check needsclick" flag="02" onchange="poftType(this)" name="checkbox1" id="carInfo_man1" checked="checked">
+				                <i class="icon-yuan c_099 icon iconfont"></i>
+				            </div>
+				            <div class="weui_cell_bd weui_cell_primary">
+				                <p class="c_666 f15">与车主为同一人</p>
+				            </div>
+				        </label>
 					</div>
+
 				</div>
-				<div class="weui_cell weui_cell_select weui_select_before pr" style="width:90%">
-					<label class="weui_label f16" style="margin-left: 4%;width:45%;margin-right:0 !important;">证件类型:</label>
+				<div class="bg_f carInfo_infoList beibao" style="margin-bottom: .5rem;">
+					<div class="weui_cell" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="beibao_name" type="text" placeholder="请输入被保人姓名" />
+
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
+					</div>
+					<div class="weui_cell weui_cell_select weui_select_before pr" style="width:90%">
+						<label class="weui_label f16" style="margin-left: 4%;width:45%;margin-right:0 !important;">证件类型:</label>
 						<select class="weui_select beibao_select c_999 f16" style="width:55%;padding-left:0 !important;" name="select2">
 							<option value="01">身份证</option>
 							<option value="02"> 驾驶证</option>
@@ -877,334 +190,419 @@
 							<option value="24">其他证件</option>
 						</select>
 						<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:12px"></span>
-				</div>
-				<div class="weui_cell"  style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="beibao_number" type="text"   placeholder="请输入证件号" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
 					</div>
-				</div>
-			</div>
-			<!--车辆信息-->
-			<div class="bg_f carInfo_info">
-				<div class="weui_cell"  style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">车架号</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="frame_number" type="text"  placeholder="请输入车架号" />
-						
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-					</div>
-				</div>
-				<div class="weui_cell"  style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">发动机号</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr">
-						<input class="weui_input" id="power_number" type="text"   placeholder="请输入发动机号" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-					</div>
-				</div>
-				<div class="weui_cell"  style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">注册日期</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr demo-cont" data-role="fieldcontain">
-						<input class="weui_input dateTime" id="zhuce_date" type="text"   placeholder="请选择注册日期" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-						<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:5px"></span>
-					</div>
-					
-				</div>
-				<div class="weui_cell " style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">是过户车</label></div>
-					<!--<div class="pa c_04b" style="top: 5px;right: 5px;">
-						<div style="" class="pr">
-							<input class="weui_switch" onchange="transChangeType(this)"  type="checkbox"/>
-							<span class="pa f12 tou_info c_fff" style="left: 40px;top: 6px;">否</span>
+					<div class="weui_cell" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">证件号码</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="beibao_number" type="text" placeholder="请输入证件号" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
 						</div>
-					</div>-->
-					<div class="" style="margin-left: 30%;">
-						<input class="transCar" id="guohuyes" onchange="transChangeType(this)"  type="radio" name="guohu" style="display: none;" />
-						<label for="guohuyes"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
-						
 					</div>
-					<div   style="margin-left: 20px;">
-						<input class="transCar" id="guohuno" onchange="transChangeType(this)"  type="radio" name="guohu" checked="checked" style="display: none;"/>
-						<label for="guohuno"><span class="iconfont icon-yuan c_099"></span>否</label>
-					</div>
-				</div>
-				<div class="weui_cell guohu_dates clearfix" style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd" style="width: 30%;"><label class="weui_label">过户日期</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr demo-cont fr" data-role="fieldcontain" style="width: 70%;margin-top: -25px;">
-						<input class="weui_input dateTime" id="guohu_date" type="text"   placeholder="请选择过户日期" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-						<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:2px"></span>
-					</div>
-					
-				</div>
-				<!--选择车辆-->
-				<div class="weui_cell" style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd"><label class="weui_label">品牌型号</label></div>
-					<div class="weui_cell_bd weui_cell_primary pr chooseCar">
-						<p class="carInfo_carname f15 c_999">东风标致DC7204LLAA轿车</p>
-						<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:5px"></span>
-					</div>
-					
 				</div>
 				<!--车辆信息-->
-				<div class="clearfix chooseCar" style="padding:.5rem 0 ;width: 100%;border-top: 1px solid #ECECEC;">
-					<div class="fl" style="margin-left: 2%;">
-						<img class="_carImg" src="../images/car.png" width="90px"/>
+				<div class="bg_f carInfo_info">
+					<div class="weui_cell" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">车架号</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="frame_number" type="text" placeholder="请输入车架号" />
+
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
 					</div>
-					<div class="fl carInfo_intr" style="width: 	37%;margin-left:2% ;">
-						<h5 class="_carName c_099 f12">东风标致DC7204LLAA轿车</h5>
-						<p class="f12 c_666 _pailiang">排量：1.977L</p>
-						<p class="f12 c_666 _yearTime">年份：2013年</p>
-						<p class="f12 c_666 _seatNum">座位数：5座</p>
+					<div class="weui_cell" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">发动机号</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr">
+							<input class="weui_input" id="power_number" type="text" placeholder="请输入发动机号" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+						</div>
 					</div>
-					<div class="fl tc" style="width: 30%;margin-top: 20px;">
-						<h5 class="c_999">参考价</h5>
-						<p class="c_ff7 f17 b400 _carPrice">￥217555</p>
+					<div class="weui_cell" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">注册日期</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr demo-cont" data-role="fieldcontain">
+							<input class="weui_input dateTime" id="zhuce_date" type="text" placeholder="请选择注册日期" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+							<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:5px"></span>
+						</div>
+
+					</div>
+					<div class="weui_cell " style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">是过户车</label></div>
+						<!--<div class="pa c_04b" style="top: 5px;right: 5px;">
+							<div style="" class="pr">
+								<input class="weui_switch" onchange="transChangeType(this)"  type="checkbox"/>
+								<span class="pa f12 tou_info c_fff" style="left: 40px;top: 6px;">否</span>
+							</div>
+						</div>-->
+						<div class="" style="margin-left: 30%;">
+							<input class="transCar" id="guohuyes" onchange="transChangeType(this)" type="radio" name="guohu" style="display: none;" />
+							<label for="guohuyes"><span class="iconfont icon-iconfontwancheng c_999"></span>是</label>
+
+						</div>
+						<div style="margin-left: 20px;">
+							<input class="transCar" id="guohuno" onchange="transChangeType(this)" type="radio" name="guohu" checked="checked" style="display: none;" />
+							<label for="guohuno"><span class="iconfont icon-yuan c_099"></span>否</label>
+						</div>
+					</div>
+					<div class="weui_cell guohu_dates clearfix" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd" style="width: 30%;"><label class="weui_label">过户日期</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr demo-cont fr" data-role="fieldcontain" style="width: 70%;margin-top: -25px;">
+							<input class="weui_input dateTime" id="guohu_date" type="text" placeholder="请选择过户日期" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+							<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:2px"></span>
+						</div>
+
+					</div>
+					<!--选择车辆-->
+					<div class="weui_cell" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd"><label class="weui_label">品牌型号</label></div>
+						<div class="weui_cell_bd weui_cell_primary pr chooseCar">
+							<p class="carInfo_carname f15 c_999">东风标致DC7204LLAA轿车</p>
+							<span class="iconfont icon-xiajiantou pa c_999" style="right:1%;top:5px"></span>
+						</div>
+
+					</div>
+					<!--车辆信息-->
+					<div class="clearfix chooseCar" style="padding:.5rem 0 ;width: 100%;border-top: 1px solid #ECECEC;">
+						<div class="fl" style="margin-left: 2%;">
+							<img class="_carImg" src="../images/car.png" width="90px" />
+						</div>
+						<div class="fl carInfo_intr" style="width: 	37%;margin-left:2% ;">
+							<h5 class="_carName c_099 f12">东风标致DC7204LLAA轿车</h5>
+							<p class="f12 c_666 _pailiang">排量：1.977L</p>
+							<p class="f12 c_666 _yearTime">年份：2013年</p>
+							<p class="f12 c_666 _seatNum">座位数：5座</p>
+						</div>
+						<div class="fl tc" style="width: 30%;margin-top: 20px;">
+							<h5 class="c_999">参考价</h5>
+							<p class="c_ff7 f17 b400 _carPrice">￥217555</p>
+						</div>
 					</div>
 				</div>
+
+				<!--选择车辆弹框-->
+
+				<div class="carListCover pr">
+					<div class="bg_f  coverTitle tc pr" style="">
+						<h5>温馨提示</h5>
+						<span class="iconfont icon-close c_fff pa _closeBtn"></span>
+					</div>
+					<div class="cover nextBtn pf">
+
+					</div>
+
+					<div class="scrollBox ">
+
+						<div class="coverBox bd bg_f8">
+							<ul class="mui-table-view">
+								<li class="mui-table-view-cell ">
+									<input type="checkbox" name="radio1" onchange="oneChoose(this)" id="goodSelect4" class="goodSelect checkChild" style="display: none;" />
+									<label for="goodSelect4" class="clearfix checkLabel">
+									 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
+									 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
+											<div class="fl" style="margin-left: 1%;margin-top: 20px;">
+												<img class="carImg" src="../images/car.png" width="60px"/>
+											</div>
+											<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
+												<h5 class="f12 carName">奔驰轿车</h5>
+												<p class="f14 c_666 pailiang">排量：2.977L</p>
+												<p class="f14 c_666 yearTime">年份：2014年</p>
+												<p class="f14 c_666 seatNum">座位数：6座</p>
+											</div>
+											<div class="fl tc" style="width: 20%;margin-top: 30px;">
+												<h5 class="c_999">参考价</h5>
+												<p class="c_ff7 f17 b400 carPrice">￥517555</p>
+											</div>
+										</div>
+									 </label>
+
+								</li>
+								<li class="mui-table-view-cell carlist">
+									<input type="checkbox" name="radio1" onchange="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;" />
+									<label for="goodSelect3" class="clearfix checkLabel">
+									 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
+									 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
+											<div class="fl" style="margin-left: 1%;margin-top: 20px;">
+												<img class="carImg" src="../images/car.png" width="60px"/>
+											</div>
+											<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
+												<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
+												<p class="f14 c_666 pailiang">排量：2.977L</p>
+												<p class="f14 c_666 yearTime">年份：2014年</p>
+												<p class="f14 c_666 seatNum">座位数：6座</p>
+											</div>
+											<div class="fl tc" style="width: 20%;margin-top: 30px;">
+												<h5 class="c_999">参考价</h5>
+												<p class="c_ff7 f17 b400 carPrice">￥517555</p>
+											</div>
+										</div>
+									 </label>
+
+								</li>
+								<li class="mui-table-view-cell carlist">
+									<input type="checkbox" name="radio1" onchange="oneChoose(this)" id="goodSelect2" class="goodSelect checkChild" style="display: none;" />
+									<label for="goodSelect2" class="clearfix checkLabel">
+									 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
+									 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
+											<div class="fl" style="margin-left: 1%;margin-top: 20px;">
+												<img class="carImg" src="../images/car.png" width="60px"/>
+											</div>
+											<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
+												<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
+												<p class="f14 c_666 pailiang">排量：2.977L</p>
+												<p class="f14 c_666 yearTime">年份：2014年</p>
+												<p class="f14 c_666 seatNum">座位数：6座</p>
+											</div>
+											<div class="fl tc" style="width: 20%;margin-top: 30px;">
+												<h5 class="c_999">参考价</h5>
+												<p class="c_ff7 f17 b400 carPrice">￥517555</p>
+											</div>
+										</div>
+									 </label>
+
+								</li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="btnList clearfix pa">
+						<div class="tc c_fff newbtn carInfo_surebtn bg_primary fl" style="background: #009944;color: #fff;">
+							确认
+						</div>
+						<div class="tc c_04b carInfo_cancelbtn cancel fl">
+							取消
+						</div>
+
+					</div>
+
+				</div>
+
+				<div style="margin-top: 15PX;">
+					<a href="#policyPlan" id="carInfo_nextBtn" class="weui_btn bg_099" style="width: 95%;padding: .3rem 0;">下一步</a>
+				</div>
+
 			</div>
-			
-			<!--选择车辆弹框-->
-			
-			<div class="carListCover pr">
-				<div class="bg_f  coverTitle tc pr" style="">
-					<h5>温馨提示</h5>
-				<span class="iconfont icon-close c_fff pa _closeBtn"></span>
-				</div>
-	        	<div class="cover nextBtn pf">
-			
-				</div>
-				
-				<div class="scrollBox ">
-					
-					<div class="coverBox bd bg_f8" >
-						<ul class="mui-table-view">
-							<li class="mui-table-view-cell ">
-								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect4" class="goodSelect checkChild" style="display: none;"/>
-								 <label for="goodSelect4" class="clearfix checkLabel">
-								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
-								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
-										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
-											<img class="carImg" src="../images/car.png" width="60px"/>
-										</div>
-										<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
-											<h5 class="f12 carName">奔驰轿车</h5>
-											<p class="f14 c_666 pailiang">排量：2.977L</p>
-											<p class="f14 c_666 yearTime">年份：2014年</p>
-											<p class="f14 c_666 seatNum">座位数：6座</p>
-										</div>
-										<div class="fl tc" style="width: 20%;margin-top: 30px;">
-											<h5 class="c_999">参考价</h5>
-											<p class="c_ff7 f17 b400 carPrice">￥517555</p>
-										</div>
-									</div>
-								 </label>
-								 
-							</li>
-							<li class="mui-table-view-cell carlist">
-								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
-								 <label for="goodSelect3" class="clearfix checkLabel">
-								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
-								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
-										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
-											<img class="carImg" src="../images/car.png" width="60px"/>
-										</div>
-										<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
-											<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
-											<p class="f14 c_666 pailiang">排量：2.977L</p>
-											<p class="f14 c_666 yearTime">年份：2014年</p>
-											<p class="f14 c_666 seatNum">座位数：6座</p>
-										</div>
-										<div class="fl tc" style="width: 20%;margin-top: 30px;">
-											<h5 class="c_999">参考价</h5>
-											<p class="c_ff7 f17 b400 carPrice">￥517555</p>
-										</div>
-									</div>
-								 </label>
-								 
-							</li>
-							<li class="mui-table-view-cell carlist">
-								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
-								 <label for="goodSelect3" class="clearfix checkLabel">
-								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
-								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
-										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
-											<img class="carImg" src="../images/car.png" width="60px"/>
-										</div>
-										<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
-											<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
-											<p class="f14 c_666 pailiang">排量：2.977L</p>
-											<p class="f14 c_666 yearTime">年份：2014年</p>
-											<p class="f14 c_666 seatNum">座位数：6座</p>
-										</div>
-										<div class="fl tc" style="width: 20%;margin-top: 30px;">
-											<h5 class="c_999">参考价</h5>
-											<p class="c_ff7 f17 b400 carPrice">￥517555</p>
-										</div>
-									</div>
-								 </label>
-								 
-							</li>
-							<li class="mui-table-view-cell carlist">
-								 <input type="checkbox" name="radio1" onchange ="oneChoose(this)" id="goodSelect3" class="goodSelect checkChild" style="display: none;"/>
-								 <label for="goodSelect3" class="clearfix checkLabel">
-								 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
-								 	<div class="clearfix fl" style="padding: 0 ;width: 90%;">
-										<div class="fl" style="margin-left: 1%;margin-top: 20px;">
-											<img class="carImg" src="../images/car.png" width="60px"/>
-										</div>
-										<div class="fl carInfo_intr" style="width: 	50%;margin-left:2% ;">
-											<h5 class="f12 carName">东风标致DC7204LLAA轿车</h5>
-											<p class="f14 c_666 pailiang">排量：2.977L</p>
-											<p class="f14 c_666 yearTime">年份：2014年</p>
-											<p class="f14 c_666 seatNum">座位数：6座</p>
-										</div>
-										<div class="fl tc" style="width: 20%;margin-top: 30px;">
-											<h5 class="c_999">参考价</h5>
-											<p class="c_ff7 f17 b400 carPrice">￥517555</p>
-										</div>
-									</div>
-								 </label>
-								 
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="btnList clearfix pa" >
-					<div class="tc c_fff newbtn carInfo_surebtn bg_primary fl" style="background: #009944;color: #fff;" >
-						确认
-					</div>
-					<div class="tc c_04b carInfo_cancelbtn cancel fl" >
-							取消	
-					</div>
-					
-				</div>
-				
-	        </div>
-			
-			<div style="margin-top: 15PX;">
-				<a href="javascript:void(0)" id="carInfo_nextBtn" class="weui_btn bg_099" style="width: 95%;padding: .3rem 0;">下一步</a>
-			</div>
-			
-		</div>
-		<!--车辆信息结束end-->
-		<!--保险方案begin-->
-		<div id="policyPlan" class="policyPlan">
-			<div class="policyTime">
-				<h4 class="c_099 b400">保险生效时间</h4>
-			</div>
-			<!--保险起保时间-->
-			<div class="bg_f" style="margin-top: .5rem;">
-				<div class="weui_cell bg_f" style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd" style="width: 130px !important;">强制险起保时间</div>
-					<div class="weui_cell_bd weui_cell_primary pr tr demo-cont" data-role="fieldcontain">
-						<input class="weui_input dateTime" id="forcePolicy_time" type="text"   placeholder="请选择起保时间" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-						<span class="iconfont icon-xiajiantou pa c_999" style="right:-4%;top:5px"></span>
-					</div>
-					
-				</div>
-			</div>
-			<p class="f14 c_c22" style="padding: 0 1rem;">*强制险起保时间不允许为空</p>
-			<div class="bg_f" style="margin-top: .5rem;">
-				<div class="weui_cell bg_f" style="width: 91%;padding-right:0 ;">
-					<div class="weui_cell_hd" style="width: 130px !important;">商业险起保时间</div>
-					<div class="weui_cell_bd weui_cell_primary pr tr demo-cont" data-role="fieldcontain">
-						<input class="weui_input dateTime" id="busPolicy_time" type="text"   placeholder="请选择起保时间" />
-						<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
-						<span class="iconfont icon-xiajiantou pa c_999" style="right:-4%;top:5px"></span>
-					</div>
-					
-				</div>
-			</div>
-			<p class="f14 c_c22" style="padding: 0 1rem;">*商业险起保时间不允许为空</p>
-			<div class="policyList">
+			<!--车辆信息结束end-->
+			<!--保险方案begin-->
+			<div id="policyPlan" class="policyPlan">
 				<div class="policyTime">
-					<h4 class="c_099 b400">保险方案</h4>
+					<h4 class="c_099 b400">保险生效时间</h4>
 				</div>
-				<div class="policyTitle">
-					<span status="1" class="c_666 policyBtn planActive">
-						往年方案
-					</span>
-					<span  status="2" class="c_666 policyBtn">
-						全能型
-					</span>
-					<span  status="3" class="c_666 policyBtn">
-						经济型
-					</span>
-					<span  status="4" class="c_666 policyBtn selfBtn">
-						自选型
-					</span>
-				</div>
-				<!--方案详情-->
-				<div class="policyInfo">
-					<!--强制险-->
-					<div id="compulsory">
-						<h5>强制险</h5>
-						<div class="compulsoryList">
-							 <div class="weui_cells">
-						        <div class="weui_cell">
-						            <div class="weui_cell_bd weui_cell_primary">
-						                <p class="c_999 f15 jiaoqiang"><span class="policyName">交强险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-						            </div>
-						            <div class="weui_cell_ft c_099 f15">投保</div>
-						        </div>
-						    </div>
-						    <div class="weui_cells che">
-						        <div class="weui_cell">
-						            <div class="weui_cell_bd weui_cell_primary">
-						                <p class="c_999 f15 bord"><span class="policyName">车船税</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-						            </div>
-						            <div class="weui_cell_ft c_999 f15">交税</div>
-						        </div>
-						    </div>
+				<!--保险起保时间-->
+				<div class="bg_f" style="margin-top: .5rem;">
+					<div class="weui_cell bg_f" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd" style="width: 130px !important;">强制险起保时间</div>
+						<div class="weui_cell_bd weui_cell_primary pr tr demo-cont" data-role="fieldcontain">
+							<input class="weui_input dateTime" id="forcePolicy_time" type="text" placeholder="请选择起保时间" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+							<span class="iconfont icon-xiajiantou pa c_999" style="right:-4%;top:5px"></span>
 						</div>
-						
+
 					</div>
-					<!--商业险-->
-					<div id="businessRisks">
-						<h5 class="c_666">商业险</h5>
-						<div class="businessRisksList">
-							 <div class="weui_cells">
-						        <div class="weui_cell">
-						            <div class="weui_cell_bd weui_cell_primary">
-						                <p class="question f14 c_666"><span class="policyName">机动车损失险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-						            </div>
-						            <div class="weui_cell_ft c_099 f15">投保</div>
-						        </div>
-						    </div>
-						    <div class="weui_cells">
-						        <div class="weui_cell">
-						            <div class="weui_cell_bd weui_cell_primary">
-						               <p class="question f14 c_666"><span class="policyName">座位险（司机）</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-						            </div>
-						            <div class="weui_cell_ft c_999 f15">20万</div>
-						        </div>
-						    </div>
-						    <div class="weui_cells che">
-						        <div class="weui_cell">
-						            <div class="weui_cell_bd weui_cell_primary">
-						            	<p class="question f14 c_666"><span class="policyName">机动车损失险</span><span class="buji">不计免赔</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-						            </div>
-						            <div class="weui_cell_ft c_999 f15">交税</div>
-						        </div>
-						    </div>
+				</div>
+				<p class="f14 c_c22" style="padding: 0 1rem;">*强制险起保时间不允许为空</p>
+				<div class="bg_f" style="margin-top: .5rem;">
+					<div class="weui_cell bg_f" style="width: 91%;padding-right:0 ;">
+						<div class="weui_cell_hd" style="width: 130px !important;">商业险起保时间</div>
+						<div class="weui_cell_bd weui_cell_primary pr tr demo-cont" data-role="fieldcontain">
+							<input class="weui_input dateTime" id="busPolicy_time" type="text" placeholder="请选择起保时间" />
+							<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+							<span class="iconfont icon-xiajiantou pa c_999" style="right:-4%;top:5px"></span>
 						</div>
-						<!--自选型-->
-						<div class="self-selection">
+
+					</div>
+				</div>
+				<p class="f14 c_c22" style="padding: 0 1rem;">*商业险起保时间不允许为空</p>
+				<div class="policyList">
+					<div class="policyTime">
+						<h4 class="c_099 b400">保险方案</h4>
+					</div>
+					<div class="policyTitle">
+						<span status="1" class="c_666 policyBtn planActive">
+							往年方案
+						</span>
+						<span status="2" class="c_666 policyBtn">
+							全能型
+						</span>
+						<span status="3" class="c_666 policyBtn">
+							经济型
+						</span>
+						<span status="4" class="c_666 policyBtn selfBtn">
+							自选型
+						</span>
+					</div>
+					<!--方案详情-->
+					<div class="policyInfo">
+						<!--强制险-->
+						<div id="compulsory">
+							<h5>强制险</h5>
+							<div class="compulsoryList">
+								<div class="weui_cells">
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="c_999 f15 jiaoqiang"><span class="policyName">交强险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+										</div>
+										<div class="weui_cell_ft c_099 f15">投保</div>
+									</div>
+								</div>
+								<div class="weui_cells che">
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="c_999 f15 bord"><span class="policyName">车船税</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+										</div>
+										<div class="weui_cell_ft c_999 f15">交税</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<!--商业险-->
+						<div id="businessRisks">
+							<h5 class="c_666">商业险</h5>
+							<div class="businessRisksList">
+								<div class="weui_cells">
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="question f14 c_666"><span class="policyName">机动车损失险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+										</div>
+										<div class="weui_cell_ft c_099 f15">投保</div>
+									</div>
+								</div>
+								<div class="weui_cells">
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="question f14 c_666"><span class="policyName">座位险（司机）</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+										</div>
+										<div class="weui_cell_ft c_999 f15">20万</div>
+									</div>
+								</div>
+								<div class="weui_cells che">
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="question f14 c_666"><span class="policyName">机动车损失险</span><span class="buji">不计免赔</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+										</div>
+										<div class="weui_cell_ft c_999 f15">交税</div>
+									</div>
+								</div>
+							</div>
+							<!--自选型-->
+							<div class="self-selection">
+								<div class="weui_cells" style="margin-top: 0px;">
+									<div class="list">
+										<div class="weui_cell" style="width: 95%;">
+											<div class="weui_cell_bd weui_cell_primary">
+												<p class="question f14 c_666"><span class="policyName">机动车损失险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+											</div>
+											<div class="weui_cell_bd notice">
+												<div class=" weui_cells_checkbox">
+													<label class="weui_cell weui_check_label" for="s18" style="padding: 0;">
+											            <div class="weui_cell_hd">
+											                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s18">
+											                <i class="weui_icon_checked"></i>
+											            </div>
+											            <div class="weui_cell_bd weui_cell_primary"  style="width:60px;">
+											                <p class="c_04b f12">不计免赔</p>
+											            </div>
+											        </label>
+												</div>
+											</div>
+											<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
+												<div style="width: 80px;" class="pr">
+													<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox" />
+													<span class="pa f12 tou_info c_fff" style="">不投保</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="list">
+										<div class="weui_cell" style="width: 95%;">
+											<div class="weui_cell_bd weui_cell_primary">
+												<p class="question f14 c_666"><span class="policyName">机动车损失险</span><span>￥12334</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+											</div>
+											<div class="weui_cell_bd notice">
+												<div class=" weui_cells_checkbox">
+													<label class="weui_cell weui_check_label" for="s17" style="padding: 0px;">
+											            <div class="weui_cell_hd">
+											                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s17">
+											                <i class="weui_icon_checked"></i>
+											            </div>
+											            <div class="weui_cell_bd weui_cell_primary" style="width:60px;">
+											                <p class="c_04b f12">不计免赔</p>
+											            </div>
+											        </label>
+												</div>
+											</div>
+											<div class="weui_cell_ft c_04b" style="padding: .5rem">
+												<div class="weui_cell weui_cell_select pr" style="">
+													<select class="weui_select c_666 f14" onchange="flagChecked(this)" name="select1" style="width: ;">
+														<option value="-1">无</option>
+														<option value="2">10000000</option>
+														<option value="3">Email</option>
+													</select>
+													<span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="list">
+										<div class="weui_cell" style="width: 95%;">
+											<div class="weui_cell_bd weui_cell_primary">
+												<p class="question f14 c_666"><span class="policyName">玻璃险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+											</div>
+											<div class="weui_cell_bd notice">
+												<div class=" weui_cells_checkbox">
+													<label class="weui_cell weui_check_label" for="s16" style="padding: 0;">
+											            <div class="weui_cell_hd">
+											                <input type="checkbox" class="weui_check" onchange="_mianpei(this)"  name="checkbox1" id="s16" >
+											                <i class="weui_icon_checked"></i>
+											            </div>
+											            <div class="weui_cell_bd weui_cell_primary"  style="width:60px;">
+											                <p class="c_04b f12">不计免赔</p>
+											            </div>
+											        </label>
+												</div>
+											</div>
+											<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
+												<div style="width: 80px;" class="pr">
+													<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox" />
+													<span class="pa f12 tou_info c_fff" style="">不投保</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--保险详情结束-->
+					<div class="clearfix" style="width: 90%;margin: 5px auto;">
+						<button id="changePlan" class="fr">不满意？调整方案>></button>
+					</div>
+
+				</div>
+				<!--保险列表弹框-->
+				<div class="policyListCover pr">
+					<div class="bg_f  coverTitle tc pr" style="">
+						<h5>方案调整</h5>
+						<span class="iconfont icon-close c_fff pa _closeBtn"></span>
+					</div>
+					<div class="cover nextBtn pf">
+
+					</div>
+
+					<div class="scrollBox ">
+						<!--列表-->
+						<div class="coverBox bd bg_f8">
 							<div class="weui_cells" style="margin-top: 0px;">
 								<div class="list">
 									<div class="weui_cell" style="width: 95%;">
-										<div class="weui_cell_bd weui_cell_primary" >
+										<div class="weui_cell_bd weui_cell_primary">
 											<p class="question f14 c_666"><span class="policyName">机动车损失险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
 										</div>
 										<div class="weui_cell_bd notice">
 											<div class=" weui_cells_checkbox">
-												<label class="weui_cell weui_check_label" for="s18" style="padding: 0;">
+												<label class="weui_cell weui_check_label" for="s11" style="padding: 0;">
 										            <div class="weui_cell_hd">
-										                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s18">
+										                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s11">
 										                <i class="weui_icon_checked"></i>
 										            </div>
 										            <div class="weui_cell_bd weui_cell_primary"  style="width:60px;">
@@ -1215,7 +613,7 @@
 										</div>
 										<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
 											<div style="width: 80px;" class="pr">
-												<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox"/>
+												<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox" />
 												<span class="pa f12 tou_info c_fff" style="">不投保</span>
 											</div>
 										</div>
@@ -1224,13 +622,13 @@
 								<div class="list">
 									<div class="weui_cell" style="width: 95%;">
 										<div class="weui_cell_bd weui_cell_primary">
-											<p class="question f14 c_666"><span class="policyName" >机动车损失险</span><span>￥12334</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
+											<p class="question f14 c_666"><span class="policyName">机动车损失险</span><span>￥12334</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
 										</div>
 										<div class="weui_cell_bd notice">
 											<div class=" weui_cells_checkbox">
-												<label class="weui_cell weui_check_label" for="s17" style="padding: 0px;">
+												<label class="weui_cell weui_check_label" for="s12" style="padding: 0px;">
 										            <div class="weui_cell_hd">
-										                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s17">
+										                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s12">
 										                <i class="weui_icon_checked"></i>
 										            </div>
 										            <div class="weui_cell_bd weui_cell_primary" style="width:60px;">
@@ -1240,27 +638,27 @@
 											</div>
 										</div>
 										<div class="weui_cell_ft c_04b" style="padding: .5rem">
-									        <div class="weui_cell weui_cell_select pr" style="">
-								                <select class="weui_select c_666 f14" onchange="flagChecked(this)" name="select1" style="width: ;">
-								                    <option  value="-1">无</option>
-								                    <option value="2">10000000</option>
-								                    <option value="3">Email</option>
-								                </select>
-								                <span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
-									        </div>
+											<div class="weui_cell weui_cell_select pr" style="">
+												<select class="weui_select c_666 f14" onchange="flagChecked(this)" name="select2" style="width: ;">
+													<option value="-1">无</option>
+													<option value="2">10000000</option>
+													<option value="3">100</option>
+												</select>
+												<span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
+											</div>
 										</div>
 									</div>
 								</div>
 								<div class="list">
 									<div class="weui_cell" style="width: 95%;">
-										<div class="weui_cell_bd weui_cell_primary" >
+										<div class="weui_cell_bd weui_cell_primary">
 											<p class="question f14 c_666"><span class="policyName">玻璃险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
 										</div>
 										<div class="weui_cell_bd notice">
 											<div class=" weui_cells_checkbox">
-												<label class="weui_cell weui_check_label" for="s16" style="padding: 0;">
+												<label class="weui_cell weui_check_label" for="s13" style="padding: 0;">
 										            <div class="weui_cell_hd">
-										                <input type="checkbox" class="weui_check" onchange="_mianpei(this)"  name="checkbox1" id="s16" >
+										                <input type="checkbox" class="weui_check" onchange="_mianpei(this)"  name="checkbox1" id="s13" >
 										                <i class="weui_icon_checked"></i>
 										            </div>
 										            <div class="weui_cell_bd weui_cell_primary"  style="width:60px;">
@@ -1271,186 +669,84 @@
 										</div>
 										<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
 											<div style="width: 80px;" class="pr">
-												<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox"/>
+												<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox" />
 												<span class="pa f12 tou_info c_fff" style="">不投保</span>
 											</div>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
-				</div>
-				<!--保险详情结束-->
-				<div class="clearfix" style="width: 90%;margin: 5px auto;">
-					<button id="changePlan" class="fr">不满意？调整方案>></button>
-				</div>
-				
-			</div>
-			<!--保险列表弹框-->
-			<div class="policyListCover pr">
-				<div class="bg_f  coverTitle tc pr" style="">
-					<h5>方案调整</h5>
-					<span class="iconfont icon-close c_fff pa _closeBtn"></span>
-				</div>
-	        	<div class="cover nextBtn pf">
-			
-				</div>
-				
-				<div class="scrollBox ">
-					<!--列表-->
-					<div class="coverBox bd bg_f8" >
-						<div class="weui_cells" style="margin-top: 0px;">
-							<div class="list">
-								<div class="weui_cell" style="width: 95%;">
-									<div class="weui_cell_bd weui_cell_primary" >
-										<p class="question f14 c_666"><span class="policyName">机动车损失险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-									</div>
-									<div class="weui_cell_bd notice">
-										<div class=" weui_cells_checkbox">
-											<label class="weui_cell weui_check_label" for="s11" style="padding: 0;">
-									            <div class="weui_cell_hd">
-									                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s11">
-									                <i class="weui_icon_checked"></i>
-									            </div>
-									            <div class="weui_cell_bd weui_cell_primary"  style="width:60px;">
-									                <p class="c_04b f12">不计免赔</p>
-									            </div>
-									        </label>
-										</div>
-									</div>
-									<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
-										<div style="width: 80px;" class="pr">
-											<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox"/>
-											<span class="pa f12 tou_info c_fff" style="">不投保</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="weui_cell" style="width: 95%;">
-									<div class="weui_cell_bd weui_cell_primary">
-										<p class="question f14 c_666"><span class="policyName" >机动车损失险</span><span>￥12334</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-									</div>
-									<div class="weui_cell_bd notice">
-										<div class=" weui_cells_checkbox">
-											<label class="weui_cell weui_check_label" for="s12" style="padding: 0px;">
-									            <div class="weui_cell_hd">
-									                <input type="checkbox" class="weui_check"  onchange="_mianpei(this)" name="checkbox1" id="s12">
-									                <i class="weui_icon_checked"></i>
-									            </div>
-									            <div class="weui_cell_bd weui_cell_primary" style="width:60px;">
-									                <p class="c_04b f12">不计免赔</p>
-									            </div>
-									        </label>
-										</div>
-									</div>
-									<div class="weui_cell_ft c_04b" style="padding: .5rem">
-								        <div class="weui_cell weui_cell_select pr" style="">
-							                <select class="weui_select c_666 f14" onchange="flagChecked(this)" name="select2" style="width: ;">
-							                    <option  value="-1">无</option>
-							                    <option value="2">10000000</option>
-							                    <option value="3">100</option>
-							                </select>
-							                <span class="iconfont icon-xiajiantou c_666 look pa" style="right: 5px;top: 13px;"></span>
-								        </div>
-									</div>
-								</div>
-							</div>
-							<div class="list">
-								<div class="weui_cell" style="width: 95%;">
-									<div class="weui_cell_bd weui_cell_primary" >
-										<p class="question f14 c_666"><span class="policyName">玻璃险</span><i class="iconfont icon-icon-question f18 c_04b"></i></p>
-									</div>
-									<div class="weui_cell_bd notice">
-										<div class=" weui_cells_checkbox">
-											<label class="weui_cell weui_check_label" for="s13" style="padding: 0;">
-									            <div class="weui_cell_hd">
-									                <input type="checkbox" class="weui_check" onchange="_mianpei(this)"  name="checkbox1" id="s13" >
-									                <i class="weui_icon_checked"></i>
-									            </div>
-									            <div class="weui_cell_bd weui_cell_primary"  style="width:60px;">
-									                <p class="c_04b f12">不计免赔</p>
-									            </div>
-									        </label>
-										</div>
-									</div>
-									<div class="weui_cell_ft c_04b" style="margin-top: 5px;">
-										<div style="width: 80px;" class="pr">
-											<input class="weui_switch" onchange="changeType(this)" placeholder="投保" type="checkbox"/>
-											<span class="pa f12 tou_info c_fff" style="">不投保</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							
+					<div class="btnList clearfix pa">
+						<div class="tc c_fff newbtn bg_primary fl policyListSure" style="background: #009944;color: #fff;">
+							调整完毕
 						</div>
+						<div class="tc c_04b cancel fl policyListCancel">
+							取消
+						</div>
+
 					</div>
+
 				</div>
-				<div class="btnList clearfix pa" >
-					<div class="tc c_fff newbtn bg_primary fl policyListSure" style="background: #009944;color: #fff;" >
-						调整完毕
-					</div>
-					<div class="tc c_04b cancel fl policyListCancel" >
-							取消	
-					</div>
-					
+				<div style="margin-top: 15PX;">
+					<a href="javascript:void(0)" id="policyPlan_nextBtn" class="weui_btn bg_099" style="width: 95%;padding: .3rem 0;">下一步</a>
 				</div>
-				
-	        </div>
-	        <div style="margin-top: 15PX;">
-				<a href="javascript:void(0)" id="policyPlan_nextBtn" class="weui_btn bg_099" style="width: 95%;padding: .3rem 0;">下一步</a>
 			</div>
-		</div>
-		<!--保险方案结束-->
-		<!--算保费开始-->
-		<div id="companyPrice" class="companyPrice">
-			<ul>
-				<li class=" mui-table-view-cell">
-					<!--公司名-->
-					<div class="clearfix companyBox">
-						<div class="company clearfix">
-							<div class="company_info" style="padding: 1rem 0;width: 100%;">
-								<div class="clearfix" style="width: 50%;">
-									<img class="fl img" src="../images/PAZYCX.png" alt="Logo" width="40px" />
-									<h5 class="fl f15">平安车险</h5>
+			<!--保险方案结束-->
+			<!--算保费开始-->
+			<div id="companyPrice" class="companyPrice clearfix">
+				<ul>
+					<li class=" mui-table-view-cell">
+						<!--公司名-->
+						<div class="clearfix companyBox pr">
+							<div class="company clearfix">
+								<div class="company_info" style="padding: 1rem 0;width: 100%;">
+									<div class="clearfix" style="width: 50%;">
+										<img class="fl img" src="../images/PAZYCX.png" alt="Logo" width="40px" />
+										<h5 class="fl f15">平安车险</h5>
+									</div>
+									<div class="fr" style="width: 50%;">
+										<div class="clearfix">
+											<button class="fr c_fff youhui"  templatebox="pingan" companyName="平安车险">立即报价</button>
+										</div>
+
+									</div>
 								</div>
-								<div class="fr" style="width: 50%;">
+								<div class="platformACtive clearfix">
+									<h4 class="activeTitle fl f14 c_fff "><span class="iconfont icon-youhuiquan c_fff" style="margin-right: 5px;"></span>平台优惠</h4>
+									<div class="fl zhanwei">
+
+									</div>
+									<p class="activeInfo fl c_999 f14">购车险，最高送200元油费！</p>
+								</div>
+								<!--进度条显示-->
+								<div class="weui_progress pa" style="bottom: 0px;width: 100%;">
+							        <div class="weui_progress_bar">
+							            <div class="weui_progress_inner_bar js_progress" style="width: 0%;"></div>
+							        </div>
+							    </div>
+							</div>
+							<!--保险详情-->
+							<div class="coverBox bd nextBtn" id="pingan" style="margin-top: 0;">
+								<div class="company_info" style="padding: 1rem 0;width: 100%;">
 									<div class="clearfix">
-										<button class="fr c_fff youhui" templatebox="pingan" companyName="平安车险">立即报价</button>
+										<img class="fl" src="../images/PAZYCX.png" alt="Logo" width="40px" />
+										<h5 class="fl f15 c_333">平安车险</h5>
 									</div>
-							
-								
+									<span class="fr c_ffc f18 totalPrice" companyName="{{company}}">￥67667</span>
 								</div>
-							</div>
-							<div class="platformACtive clearfix">
-								<h4 class="activeTitle fl f14 c_fff "><span class="iconfont icon-youhuiquan c_fff" style="margin-right: 5px;"></span>平台优惠</h4>
-								<div class="fl zhanwei">
 
-								</div>
-								<p class="activeInfo fl c_999 f14">购车险，最高送200元油费！</p>
-							</div>
-						</div>
-						<!--保险详情-->
-						<div class="coverBox bd nextBtn" id="pingan" style="margin-top: 0;">
-							<div class="company_info" style="padding: 1rem 0;width: 100%;">
-								<div class="clearfix">
-									<img class="fl" src="../images/PAZYCX.png" alt="Logo" width="40px" />
-									<h5 class="fl f15 c_333">平安车险</h5>
-								</div>
-								<span class="fr c_ffc f18 totalPrice" companyName="{{company}}">￥67667</span>
-							</div>
-
-							<!--交强险-->
-							<div>
-								<div class="clearfix" style="padding: .3rem .5rem;margin-top: 0px;">
-									<h4 class="fl c_666">强制险</h4>
-									<span class="fr  f14 c_666" style="padding: .1rem .5rem;border-radius: 5px;">小计￥1015元</span>
-								</div>
-								<p class="f14 bg_f c_333" style="padding:0 0.5rem 0 .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
-								<p class="f14 bg_f c_333 timeInfo" types="1" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25 12:30:56至2017-10-24 12:30:56<i class="iconfont icon-icon-question f18 c_999"></i></p>
-								<div class="weui_cells " style="background: #f8f8f8;width: 95%;">
+								<!--交强险-->
+								<div>
+									<div class="clearfix" style="padding: .3rem .5rem;margin-top: 0px;">
+										<h4 class="fl c_666">强制险</h4>
+										<span class="fr  f14 c_666" style="padding: .1rem .5rem;border-radius: 5px;">小计￥1015元</span>
+									</div>
+									<p class="f14 bg_f c_333" style="padding:0 0.5rem 0 .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
+									<p class="f14 bg_f c_333 timeInfo" types="1" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25 12:30:56至2017-10-24 12:30:56<i class="iconfont icon-icon-question f18 c_999"></i></p>
+									<div class="weui_cells " style="background: #f8f8f8;width: 95%;">
 										<div class="weui_cell">
 											<div class="weui_cell_bd weui_cell_primary">
 												<p class="c_666">交强险</p>
@@ -1463,19 +759,373 @@
 											</div>
 											<div class="weui_cell_ft c_666 f12">投保</div>
 										</div>
+									</div>
+
+								</div>
+								<!--商业险-->
+								<div class="busi_policy" style="margin-bottom: 0px;">
+									<div class="clearfix" style="padding: .3rem .5rem;">
+										<h4 class="fl c_666">商业险<span class="f14">（折扣率7.5折）</span></h4>
+										<span class="fr  f14 c_666" style="padding: .1rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
+										<span class="f12 fr oldPrice c_666" style="margin-top: 5px;">原价￥123</span>
+									</div>
+									<p class="f14 bg_f c_333" style="padding:0 0.5rem .5rem .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
+									<p class="f14 bg_f c_333 timeInfo" types="2" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25 12:30:56至2017-10-24 12:30:56<i class="iconfont icon-icon-question f18 c_999"></i></p>
+									<div class="weui_cells" style="margin: 0 auto; width: 95%;border-radius: 3px;background: #f8f8f8;">
+										<div class="info_title weui_cell clearfix" style="background: #f8f8f8;">
+											<div class="tl fl c_666 f14">险种</div>
+											<div class="tc fl c_666 f14">保额</div>
+											<div class="tc fl c_666 f14">保费</div>
+										</div>
+										<div class="weui_cell bus_info">
+											<div class="weui_cell_bd c_666 tl weui_cell_primary">
+												<p>三者险</p>
+											</div>
+											<div class="weui_cell_ft tc c_099 f12">500000</div>
+											<div class="weui_cell_ft tc c_666 f12">200</div>
+
+										</div>
+										<div class="weui_cell bus_info">
+											<div class="weui_cell_bd c_666 tl weui_cell_primary">
+												<p>玻璃险</p>
+											</div>
+											<div class="weui_cell_ft tc c_099 f12">500</div>
+											<div class="weui_cell_ft tc c_666 f12">投保</div>
+
+										</div>
+									</div>
+									<!--平台优惠-->
+									<div class="clearfix _pingtai" style="padding: 1rem;">
+										<div class="clearfix">
+											<button class="youhuiBtn _btn bg_099 fr">使用优惠码</button>
+										</div>
+										<!--活动详情/优惠详情-->
+										<div>
+											<!--<h4 class="c_666">平台优惠</h4>-->
+											<span class="c_666 f14" style="border-radius: 5px; padding: .3rem 0;">您可参与的营销活动 <span class="c_099">(仅限一个)</span></span>
+											<!--活动列表-->
+											<div id="activeList" class="activeList">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell">
+														<input type="checkbox" name="active" onchange="oneChoose(this)" id="activeList1" class="goodSelect price_activeInfo" style="display: none;" />
+														<label for="activeList1" class="clearfix checkLabel">
+														 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 2rem;width: 10%;"></span>
+														 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #11bb33;color: #fff;border-radius: 10px;" >
+																<h4 style="padding: .5rem .5rem 0rem .5rem;">500元加油卡</h4>
+																<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 80%">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
+															</div>
+														 </label>
+
+													</li>
+													<li class="mui-table-view-cell carlist">
+														<input type="checkbox" name="active" onchange="oneChoose(this)" id="activeList2" class="goodSelect price_activeInfo" style="display: none;" />
+														<label for="activeList2" class="clearfix checkLabel">
+														 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 2rem;width: 10%;"></span>
+														 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #FFC320;color: #fff;border-radius: 10px;" >
+																<h4 style="padding: .5rem .5rem 0rem .5rem;">100元话费充值卡</h4>
+																<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 80%;">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
+															</div>
+														 </label>
+
+													</li>
+												</ul>
+
+											</div>
+											<!--<p class="bg_defualt f14 c_999" style="padding: .5rem;border-radius: 3px;">活动详情，从后台读</p>-->
+										</div>
+										<!--价格-->
+										<div>
+											<div class="clearfix f15" style="padding: .5rem 0;">
+												<h4 class="c_999 fl">车险价格</h4>
+												<span class="c_999 fr ">￥12332</span>
+											</div>
+
+											<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;">
+												<h4 class="c_333 fl">实际支付</h4>
+												<span class="c_ffc fr">￥12332</span>
+											</div>
+											<a href="javascript:void(0)" id="rec_btn" class="weui_btn goChecked  bg_099" style="width: 100%;padding:.3rem 0px;margin-top: 5px;">去核保</a>
+										</div>
+									</div>
+									<!--优惠码-->
+									<div class="clearfix _dikou" style="padding: 1rem;">
+										<div class="clearfix">
+											<button class="alredYouhui _btn fr">不使用优惠码</button>
+										</div>
+										<!--活动详情/优惠详情-->
+										<div>
+											<h4 class="c_666">优惠码折扣</h4>
+											<span class="c_099" style="border-radius: 5px; padding: .3rem 0;">成功抵扣2345.66元</span>
+											<p class="bg_defualt f14 c_999" style="padding: .5rem;border-radius: 3px;">成功抵扣2345.66元</p>
+										</div>
+										<!--价格-->
+										<div>
+											<div class="clearfix f15" style="padding: .5rem 0 0;">
+												<h4 class="c_999 fl">车险价格</h4>
+												<span class="c_999 fr oldPrice">￥12332</span>
+											</div>
+											<div class="clearfix f15" style="padding: .5rem 0;">
+												<h4 class="c_999 fl">优惠码抵扣</h4>
+												<span class="c_999 fr">￥12332.00</span>
+											</div>
+											<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;">
+												<h4 class="c_333 fl">实际支付</h4>
+												<span class="c_ffc fr">￥12332</span>
+											</div>
+											<a href="javascript:void(0)" id="rec_btn" class="weui_btn goChecked bg_099" style="width: 100%;padding:.3rem 0px;margin-top: 5px;">去核保</a>
+										</div>
+									</div>
+
+								</div>
+								<div class="tc shouBtn">
+									<span class="iconfont icon-spread-up c_04b f1m" style="font-weight: 200;"></span>
+								</div>
+							</div>
+						</div>
+
+					</li>
+					<li class=" mui-table-view-cell">
+						<!--公司名-->
+						<div class="clearfix companyBox pr">
+							<div class="company clearfix">
+								<div class="company_info" style="padding: 1rem 0;width: 100%;">
+									<div class="clearfix" style="width: 50%;">
+										<img class="fl img" src="../images/PAZYCX.png" alt="Logo" width="40px" />
+										<h5 class="fl f15">平安车险</h5>
+									</div>
+									<div class="fr" style="width: 50%;">
+										<div class="clearfix">
+											<button class="fr c_fff youhui"  templatebox="pingan" companyName="平安车险">立即报价</button>
+										</div>
+
+									</div>
+								</div>
+								<div class="platformACtive clearfix">
+									<h4 class="activeTitle fl f14 c_fff "><span class="iconfont icon-youhuiquan c_fff" style="margin-right: 5px;"></span>平台优惠</h4>
+									<div class="fl zhanwei">
+
+									</div>
+									<p class="activeInfo fl c_999 f14">购车险，最高送200元油费！</p>
+								</div>
+								<!--进度条显示-->
+								<div class="weui_progress pa" style="bottom: 0px;width: 100%;">
+							        <div class="weui_progress_bar">
+							            <div class="weui_progress_inner_bar js_progress" style="width: 0%;"></div>
+							        </div>
+							    </div>
+							</div>
+							<!--保险详情-->
+							<div class="coverBox bd nextBtn" id="pingan" style="margin-top: 0;">
+								<div class="company_info" style="padding: 1rem 0;width: 100%;">
+									<div class="clearfix">
+										<img class="fl" src="../images/PAZYCX.png" alt="Logo" width="40px" />
+										<h5 class="fl f15 c_333">平安车险</h5>
+									</div>
+									<span class="fr c_ffc f18 totalPrice" companyName="{{company}}">￥67667</span>
 								</div>
 
+								<!--交强险-->
+								<div>
+									<div class="clearfix" style="padding: .3rem .5rem;margin-top: 0px;">
+										<h4 class="fl c_666">强制险</h4>
+										<span class="fr  f14 c_666" style="padding: .1rem .5rem;border-radius: 5px;">小计￥1015元</span>
+									</div>
+									<p class="f14 bg_f c_333" style="padding:0 0.5rem 0 .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
+									<p class="f14 bg_f c_333 timeInfo" types="1" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25 12:30:56至2017-10-24 12:30:56<i class="iconfont icon-icon-question f18 c_999"></i></p>
+									<div class="weui_cells " style="background: #f8f8f8;width: 95%;">
+										<div class="weui_cell">
+											<div class="weui_cell_bd weui_cell_primary">
+												<p class="c_666">交强险</p>
+											</div>
+											<div class="weui_cell_ft c_666 f12">665</div>
+										</div>
+										<div class="weui_cell">
+											<div class="weui_cell_bd weui_cell_primary">
+												<p class="c_666">车船税</p>
+											</div>
+											<div class="weui_cell_ft c_666 f12">投保</div>
+										</div>
+									</div>
+
+								</div>
+								<!--商业险-->
+								<div class="busi_policy" style="margin-bottom: 0px;">
+									<div class="clearfix" style="padding: .3rem .5rem;">
+										<h4 class="fl c_666">商业险<span class="f14">（折扣率7.5折）</span></h4>
+										<span class="fr  f14 c_666" style="padding: .1rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
+										<span class="f12 fr oldPrice c_666" style="margin-top: 5px;">原价￥123</span>
+									</div>
+									<p class="f14 bg_f c_333" style="padding:0 0.5rem .5rem .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
+									<p class="f14 bg_f c_333 timeInfo" types="2" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25 12:30:56至2017-10-24 12:30:56<i class="iconfont icon-icon-question f18 c_999"></i></p>
+									<div class="weui_cells" style="margin: 0 auto; width: 95%;border-radius: 3px;background: #f8f8f8;">
+										<div class="info_title weui_cell clearfix" style="background: #f8f8f8;">
+											<div class="tl fl c_666 f14">险种</div>
+											<div class="tc fl c_666 f14">保额</div>
+											<div class="tc fl c_666 f14">保费</div>
+										</div>
+										<div class="weui_cell bus_info">
+											<div class="weui_cell_bd c_666 tl weui_cell_primary">
+												<p>三者险</p>
+											</div>
+											<div class="weui_cell_ft tc c_099 f12">500000</div>
+											<div class="weui_cell_ft tc c_666 f12">200</div>
+
+										</div>
+										<div class="weui_cell bus_info">
+											<div class="weui_cell_bd c_666 tl weui_cell_primary">
+												<p>玻璃险</p>
+											</div>
+											<div class="weui_cell_ft tc c_099 f12">500</div>
+											<div class="weui_cell_ft tc c_666 f12">投保</div>
+
+										</div>
+									</div>
+									<!--平台优惠-->
+									<div class="clearfix _pingtai" style="padding: 1rem;">
+										<div class="clearfix">
+											<button class="youhuiBtn _btn bg_099 fr">使用优惠码</button>
+										</div>
+										<!--活动详情/优惠详情-->
+										<div>
+											<!--<h4 class="c_666">平台优惠</h4>-->
+											<span class="c_666 f14" style="border-radius: 5px; padding: .3rem 0;">您可参与的营销活动 <span class="c_099">(仅限一个)</span></span>
+											<!--活动列表-->
+											<div id="activeList" class="activeList">
+												<ul class="mui-table-view">
+													<li class="mui-table-view-cell">
+														<input type="checkbox" name="active" onchange="oneChoose(this)" id="activeList1" class="goodSelect price_activeInfo" style="display: none;" />
+														<label for="activeList1" class="clearfix checkLabel">
+														 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 2rem;width: 10%;"></span>
+														 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #11bb33;color: #fff;border-radius: 10px;" >
+																<h4 style="padding: .5rem .5rem 0rem .5rem;">500元加油卡</h4>
+																<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 80%">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
+															</div>
+														 </label>
+
+													</li>
+													<li class="mui-table-view-cell carlist">
+														<input type="checkbox" name="active" onchange="oneChoose(this)" id="activeList2" class="goodSelect price_activeInfo" style="display: none;" />
+														<label for="activeList2" class="clearfix checkLabel">
+														 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 2rem;width: 10%;"></span>
+														 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #FFC320;color: #fff;border-radius: 10px;" >
+																<h4 style="padding: .5rem .5rem 0rem .5rem;">100元话费充值卡</h4>
+																<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 80%;">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
+															</div>
+														 </label>
+
+													</li>
+												</ul>
+
+											</div>
+											<!--<p class="bg_defualt f14 c_999" style="padding: .5rem;border-radius: 3px;">活动详情，从后台读</p>-->
+										</div>
+										<!--价格-->
+										<div>
+											<div class="clearfix f15" style="padding: .5rem 0;">
+												<h4 class="c_999 fl">车险价格</h4>
+												<span class="c_999 fr ">￥12332</span>
+											</div>
+
+											<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;">
+												<h4 class="c_333 fl">实际支付</h4>
+												<span class="c_ffc fr">￥12332</span>
+											</div>
+											<a href="javascript:void(0)" id="rec_btn" class="weui_btn goChecked  bg_099" style="width: 100%;padding:.3rem 0px;margin-top: 5px;">去核保</a>
+										</div>
+									</div>
+									<!--优惠码-->
+									<div class="clearfix _dikou" style="padding: 1rem;">
+										<div class="clearfix">
+											<button class="alredYouhui _btn fr">不使用优惠码</button>
+										</div>
+										<!--活动详情/优惠详情-->
+										<div>
+											<h4 class="c_666">优惠码折扣</h4>
+											<span class="c_099" style="border-radius: 5px; padding: .3rem 0;">成功抵扣2345.66元</span>
+											<p class="bg_defualt f14 c_999" style="padding: .5rem;border-radius: 3px;">成功抵扣2345.66元</p>
+										</div>
+										<!--价格-->
+										<div>
+											<div class="clearfix f15" style="padding: .5rem 0 0;">
+												<h4 class="c_999 fl">车险价格</h4>
+												<span class="c_999 fr oldPrice">￥12332</span>
+											</div>
+											<div class="clearfix f15" style="padding: .5rem 0;">
+												<h4 class="c_999 fl">优惠码抵扣</h4>
+												<span class="c_999 fr">￥12332.00</span>
+											</div>
+											<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;">
+												<h4 class="c_333 fl">实际支付</h4>
+												<span class="c_ffc fr">￥12332</span>
+											</div>
+											<a href="javascript:void(0)" id="rec_btn" class="weui_btn goChecked bg_099" style="width: 100%;padding:.3rem 0px;margin-top: 5px;">去核保</a>
+										</div>
+									</div>
+
+								</div>
+								<div class="tc shouBtn">
+									<span class="iconfont icon-spread-up c_04b f1m" style="font-weight: 200;"></span>
+								</div>
+							</div>
+						</div>
+
+					</li>
+				</ul>
+			</div>
+			<!--算保费结束-->
+			<!--核保及支付-->
+			<div id="checkedPolicy">
+				<!--加载动画-->
+				<div>
+					<p class="tc f12">我们需要30-60秒来为您完成核保工作，请您耐心等候...</p>
+				</div>
+				<!--核保成功-->
+				<div class="checkedSuccess">
+					<p class="tc f12">恭喜您，您的保单已通过保险公司核保工作</p>
+					<div class="weui_cells weui_cells_access _lineNone">
+						<a class="weui_cell checkedTitle" href="javascript:void(0)">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p class="f16">车险信息</p>
+							</div>
+							<div class="iconfont icon-xiajiantou c_666"></div>
+						</a>
+						<div class="_infoBox _init">
+							<div class="company_info bg_f" style="padding: .5rem 0;width: 100%;">
+								<div class="clearfix">
+									<img class="fl" style="margin-left: .5rem;" src="../images/PAZYCX.png" alt="Logo" width="40px" />
+									<h5 class="fl f15 c_333" style="margin-top: 5px;">平安车险</h5>
+								</div>
+							</div>
+							<!--交强险-->
+							<div class="bg_f">
+								<div class="clearfix" style="padding:0 .5rem;margin-top: 0px;">
+									<h4 class="fl c_666 f15">强制险</h4>
+								</div>
+								<p class="f12 bg_f c_333" style="padding:0 0.5rem 0 .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
+								<p class="f12 bg_f c_333 timeInfo" types="1" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25至2017-10-24<i class="iconfont icon-icon-question f18 c_999"></i></p>
+								<div class="weui_cells bg_f8 _lineNone" style="width: 95%;margin: 0 auto;">
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="c_666">交强险</p>
+										</div>
+										<div class="c_666 f12">665</div>
+									</div>
+									<div class="weui_cell">
+										<div class="weui_cell_bd weui_cell_primary">
+											<p class="c_666">车船税</p>
+										</div>
+										<div class="c_666 f12">投保</div>
+									</div>
+								</div>
 							</div>
 							<!--商业险-->
-							<div class="busi_policy" style="margin-bottom: 0px;">
+							<div class="busi_policy bg_f" style="margin-bottom:0;padding-bottom: .5rem;">
 								<div class="clearfix" style="padding: .3rem .5rem;">
-									<h4 class="fl c_666">商业险<span class="f14">（折扣率7.5折）</span></h4>
-									<span class="fr  f14 c_666" style="padding: .1rem .5rem;border-radius: 5px;">小计￥2189.28元</span>
-									<span class="f12 fr oldPrice c_666" style="margin-top: 5px;">原价￥123</span>
+									<h4 class="fl c_666 f15">商业险<span class="f12">（折扣率7.5折）</span></h4>
 								</div>
-								<p class="f14 bg_f c_333" style="padding:0 0.5rem .5rem .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
-								<p class="f14 bg_f c_333 timeInfo" types="2" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25 12:30:56至2017-10-24 12:30:56<i class="iconfont icon-icon-question f18 c_999"></i></p>
-								<div class="weui_cells" style="margin: 0 auto; width: 95%;border-radius: 3px;background: #f8f8f8;">
+								<p class="f12 bg_f c_333" style="padding:0 0.5rem 0 .5rem;">保单号：<span class="c_333">131121213113212132132121321</span></p>
+								<p class="f12 bg_f c_333 timeInfo" types="1" style="padding:0 0.5rem 0 .5rem;">生效时间：2016-10-25至2017-10-24<i class="iconfont icon-icon-question f18 c_999"></i></p>
+								<div class="weui_cells _lineNone" style="margin: 0 auto; width: 95%;border-radius: 3px;background: #f8f8f8;">
 									<div class="info_title weui_cell clearfix" style="background: #f8f8f8;">
 										<div class="tl fl c_666 f14">险种</div>
 										<div class="tc fl c_666 f14">保额</div>
@@ -1485,119 +1135,272 @@
 										<div class="weui_cell_bd c_666 tl weui_cell_primary">
 											<p>三者险</p>
 										</div>
-										<div class="weui_cell_ft tc c_099 f12">500000</div>
-										<div class="weui_cell_ft tc c_666 f12">200</div>
+										<div class=" tc c_099 f12">500000</div>
+										<div class=" tc c_666 f12">200</div>
 
 									</div>
 									<div class="weui_cell bus_info">
 										<div class="weui_cell_bd c_666 tl weui_cell_primary">
 											<p>玻璃险</p>
 										</div>
-										<div class="weui_cell_ft tc c_099 f12">500</div>
-										<div class="weui_cell_ft tc c_666 f12">投保</div>
+										<div class="tc c_099 f12">500</div>
+										<div class="tc c_666 f12">投保</div>
 
 									</div>
 								</div>
-								<!--平台优惠-->
-								<div class="clearfix _pingtai" style="padding: 1rem;">
-									<div class="clearfix">
-										<button class="youhuiBtn _btn bg_099 fr">使用优惠码</button>
-									</div>
-									<!--活动详情/优惠详情-->
-									<div>
-										<!--<h4 class="c_666">平台优惠</h4>-->
-										<span class="c_666 f14" style="border-radius: 5px; padding: .3rem 0;">您可参与的营销活动 <span class="c_099">(仅限一个)</span></span>
-										<!--活动列表-->
-										<div id="activeList" class="activeList">
-											<ul class="mui-table-view">
-												<li class="mui-table-view-cell" >
-													 <input type="checkbox" name="active" onchange ="oneChoose(this)" id="activeList1" class="goodSelect price_activeInfo" style="display: none;"/>
-													 <label for="activeList1" class="clearfix checkLabel">
-													 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
-													 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #11bb33;color: #fff;border-radius: 10px;" >
-															<h4 style="padding: .5rem .5rem 0rem .5rem;">500元加油卡</h4>
-															<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 80%">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
-														</div>
-													 </label>
-													 
-												</li>
-												<li class="mui-table-view-cell carlist">
-													 <input type="checkbox" name="active" onchange ="oneChoose(this)" id="activeList2" class="goodSelect price_activeInfo" style="display: none;"/>
-													 <label for="activeList2" class="clearfix checkLabel">
-													 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top: 35px;width: 10%;"></span>
-													 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #FFC320;color: #fff;border-radius: 10px;" >
-															<h4 style="padding: .5rem .5rem 0rem .5rem;">100元话费充值卡</h4>
-															<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 80%;">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
-														</div>
-													 </label>
-													 
-												</li>
-											</ul>
-											
-											
-											
-										</div>
-										<!--<p class="bg_defualt f14 c_999" style="padding: .5rem;border-radius: 3px;">活动详情，从后台读</p>-->
-									</div>
-									<!--价格-->
-									<div>
-										<div class="clearfix f15" style="padding: .5rem 0;">
-											<h4 class="c_999 fl">车险价格</h4>
-											<span class="c_999 fr ">￥12332</span>
-										</div>
-										
-										<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;">
-											<h4 class="c_333 fl">实际支付</h4>
-											<span class="c_ffc fr">￥12332</span>
-										</div>
-										<a href="javascript:void(0)" id="rec_btn" class="weui_btn  bg_099" style="width: 100%;padding: 0px;margin-top: 5px;">下一步</a>
-									</div>
+							</div>
+						</div>
+						<a class="weui_cell checkedTitle" href="javascript:void(0)">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p class="f16">优惠信息</p>
+							</div>
+							<div class="iconfont icon-xiajiantou c_666"></div>
+						</a>
+						<div class="_infoBox _init">
+							<label for="activeList1" class="clearfix checkLabel">
+							 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #fff;color: #666;border-radius: 10px;margin: 5px 5%;" >
+									<h4 style="padding: .5rem .5rem 0rem .5rem;" class="f15">500元加油卡</h4>
+									<p class="f12" style="padding: 0rem .5rem .5rem .5rem;width: 90%">啊觉得卡卡了啊了肯定就阿喀琉斯大家啊可见凤姐哦日开放的快乐升级搭街坊拉德斯基分厘卡今晚</p>
 								</div>
-								<!--优惠码-->
-								<div class="clearfix _dikou" style="padding: 1rem;">
-									<div class="clearfix">
-										<button class="alredYouhui _btn fr">不使用优惠码</button>
-									</div>
-									<!--活动详情/优惠详情-->
-									<div>
-										<h4 class="c_666">优惠码折扣</h4>
-										<span class="c_099" style="border-radius: 5px; padding: .3rem 0;">成功抵扣2345.66元</span>
-										<p class="bg_defualt f14 c_999" style="padding: .5rem;border-radius: 3px;">成功抵扣2345.66元</p>
-									</div>
-									<!--价格-->
-									<div>
-										<div class="clearfix f15" style="padding: .5rem 0 0;">
-											<h4 class="c_999 fl">车险价格</h4>
-											<span class="c_999 fr oldPrice">￥12332</span>
+							 </label>
+						</div>
+						<a class="weui_cell checkedTitle" href="javascript:void(0)">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p class="f16">资料信息</p>
+							</div>
+							<div class="iconfont icon-shangjiantou c_666"></div>
+						</a>
+						<div class="_infoBox">
+							<!--联系方式-->
+							<h5 class="title">联系方式</h5>
+							<div class="weui_cells weui_cells_form _lineNone">
+						        <div class="weui_cell">
+						            <div class="weui_cell_hd"><label class="weui_label">手机号</label></div>
+						            <div class="weui_cell_bd weui_cell_primary pr">
+						                <input class="weui_input f14 _focus" id="phoneNum" type="number"   placeholder="请输入电话号码"/>
+						                <button  class="get_btn get pa bg_099">获取验证码</button>
+						                <span class="get_btn btn_cover pa"></span>
+						            </div>
+						        </div>
+						        <div class="weui_cell">
+						            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+						            <div class="weui_cell_bd weui_cell_primary">
+						                <input class="weui_input f14 _focus" type="number" id="checkedNum"  placeholder="请输入验证码"/>
+						            </div>
+						        </div>
+						        
+						        
+						    </div>
+						     <!--联系人地址列表-->
+						    <h5 class="title">联系人地址</h5>
+					        <div id="_addrList" class="_addrList">
+								<ul class="mui-table-view">
+									<li class="mui-table-view-cell">
+										<input type="checkbox" name="active" onchange="oneChoose(this)" id="_addrList1" class="goodSelect price_activeInfo" style="display: none;" />
+										<label for="_addrList1" class="clearfix checkLabel">
+										 	<span class="fl weui_icon_circle icon" style="display: inline-block;margin-top:15px;width: 4%;margin-left: 1%;"></span>
+										 	<div class="clearfix fl" style="padding: 0 ;width: 90%;background: #fff;color: #666;border-radius: 10px;margin-left: 3%;" >
+												<h4 style="padding: .5rem .5rem 0rem .5rem;">陈先生</h4>
+												<p class="f14" style="padding: 0rem .5rem .5rem .5rem;width: 100%">成都市金牛区蜀汉路288号</p>
+											</div>
+										 </label>
+									</li>
+								</ul>
+								
+							</div>
+						      <!--新建联系人地址-->
+					      <div class="clearfix">
+					      	 <button  class="weui_btn weui_btn_mini bg_099 addAddrBtn fr">使用新地址</button>
+					      </div>
+						      
+					        <div class="weui_cells weui_cells_form _addAddr _lineNone">
+						        <div class="weui_cell">
+						            <div class="weui_cell_hd"><label class="weui_label">联系人</label></div>
+						            <div class="weui_cell_bd weui_cell_primary pr">
+						                <input class="weui_input _focus" id="man" type="text"   placeholder="请填写收货人姓名"/>
+						               
+						            </div>
+						        </div>
+						        <div class="weui_cell">
+						            <div class="weui_cell_hd"><label class="weui_label">详细地址</label></div>
+						            <div class="weui_cell_bd weui_cell_primary">
+						                <input class="weui_input _focus" id="addr" type="text"  placeholder="请填写详细地址"/>
+						            </div>
+						        </div>
+						    </div>
+						   
+						    <h5 class="title">投保资料</h5>
+						    <div style="width:90%;margin: 0 auto;" class="clearfix tc">
+						    	<div for="transz" class="front_box tc fl pr">
+					               <div class="transImgz _imgBox pa">
+					               	 <i class="iconfont icon-close c_04b delImg"></i>
+					               </div>
+					               <label for="transz">
+						               <div class="icon jiaImg">
+						                    <i class="iconfont icon-jia c_04b f1m"></i>
+						                </div>
+					                </label>
+					                <h5 class="c_666 f14 b200" style="margin-top: 5px;">行驶证第一页</h5>
+									<input type="file" name="front" id="transz" value="" style="display: none;" />
+								</div>
+								<div  class="front_box tc fl pr">
+					               <div class="transImgf _imgBox pa">
+					               	 <i class="iconfont icon-close c_04b delImg"></i>
+					               </div>
+					               <label for="transf">
+						               <div class="icon jiaImg">
+						                    <i class="iconfont icon-jia c_04b f1m"></i>
+						                </div>
+					                </label>
+					                <h5 class="c_666 f14 b200" style="margin-top: 5px;">行驶证第二页</h5>
+									<input type="file"  name="front" id="transf" value="" style="display: none;" />
+								</div>
+					            
+						    </div>
+						    <div style="width:90%;margin: 1.5rem auto;" class="clearfix tc">
+						    	<div class="front_box tc fl pr">
+					               <div class="idCarImgz _imgBox pa">
+					               	 <i class="iconfont icon-close c_04b delImg"></i>
+					               </div>
+					               <label for="idCarz">
+						               	<div class="icon jiaImg">
+						                    <i class="iconfont icon-jia c_04b f1m"></i>
+						                </div>
+					               </label>
+					                <h5 class="c_666 f14 b200" style="margin-top: 5px;">身份证正面</h5>
+									<input type="file"  name="front" id="idCarz" value="" style="display: none;" />
+								</div>
+								<div class="front_box tc fl pr">
+					               <div class="idCarImgf _imgBox pa">
+					               	 <i class="iconfont icon-close c_04b delImg"></i>
+					               </div>
+					               <label for="idCarf">
+						               	<div class="icon jiaImg" style="">
+						                    <i class="iconfont icon-jia c_04b f1m"></i>
+						                </div>
+					               </label>
+					                <h5 class="c_666 f14 b200" style="margin-top: 5px;">身份证反面</h5>
+									<input type="file"  name="front" id="idCarf" value="" style="display: none;" />
+								</div>
+					            
+						    </div>
+						</div>
+						<a class="weui_cell checkedTitle" href="javascript:void(0)">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p class="f16">支付信息</p>
+							</div>
+							<div class="iconfont icon-shangjiantou c_666"></div>
+						</a>
+						<div class="_infoBox">
+							<!--支付方式列表-->
+							<ul class="mui-table-view payWays">
+								<li class="mui-table-view-cell">
+									<input type="checkbox" name="active" onchange="oneChoose(this)" id="payways_wx" class="goodSelect price_activeInfo" checked="checked" style="display: none;" />
+									<label for="payways_wx" class="clearfix checkLabel">
+									 	<div class="clearfix fl bg_f" style="padding: .5rem ;width: 60%;color: #666;border-radius: 10px;margin-left: 3%;" >
+											<img src="../images/payways_wx.png" width="43%" alt="" />
 										</div>
-										<div class="clearfix f15" style="padding: .5rem 0;">
-											<h4 class="c_999 fl">优惠码抵扣</h4>
-											<span class="c_999 fr">￥12332.00</span>
-										</div>
-										<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;">
-											<h4 class="c_333 fl">实际支付</h4>
-											<span class="c_ffc fr">￥12332</span>
-										</div>
-										<a href="javascript:void(0)" id="rec_btn" class="weui_btn  bg_099" style="width: 100%;padding: 0px;margin-top: 5px;">下一步</a>
-									</div>
+										<span class="fl weui_icon_success icon" style="display: inline-block;margin-top:3%;width: 20%;margin-left: 10px;"></span>
+									 </label>
+								</li>
+							</ul>
+							<!--价格-->
+							<div class="checkedPrice bg_f">
+								<div class="clearfix f15" style="padding: .5rem 0 0;">
+									<h4 class="c_666 fl">车险价格</h4>
+									<span class="c_999 fr checked_oldPrice">￥1332</span>
+								</div>
+								<div class="clearfix f14" style="padding: .5rem 0 0;">
+									<h4 class="c_999 fl b200">强制险</h4>
+									<span class="c_999 fr checked_al">￥1332</span>
+								</div>
+								<div class="clearfix f14" style="padding: .5rem 0 0;">
+									<h4 class="c_999 fl b200">商业险</h4>
+									<span class="c_999 fr checked_busi">￥1332</span>
+									<span class="c_999 fr checked_busiold" style="margin-right: 15px;">原价：<span >￥2334</span></span>
+								</div>
+								<div class="clearfix f15" style="padding: .5rem 0;">
+									<h4 class="c_999 fl">优惠码抵扣</h4>
+									<span class="c_999 fr deductionPrice">￥100</span>
+								</div>
+								<div class="clearfix f18" style="border-top: 1px solid #e3e3e3;padding-top: .5rem;">
+									<h4 class="c_ffc fl">实际支付</h4>
+									<span class="c_ffc fr payPrice">￥1232</span>
 								</div>
 								
-
-							</div>
-							<div class="tc shouBtn">
-								<span class="iconfont icon-spread-up c_04b f1m" style="font-weight: 200;"></span>
 							</div>
 						</div>
 					</div>
+					<a href="javascript:void(0)" id="pay_btn" class="weui_btn  bg_099" style="width: 90%;padding:.3rem 0px;margin:10px auto;">去支付保单</a>
+				</div>
+				<!--核保失败-->
+				<div class="checkedFail bg_f8">
+					<div>
+						<p class="tc">很遗憾，您的保单核保未通过</p>
+					</div>
+					<!--资料有误-->
+					<div class="dataError">
+						<!--失败原因列表-->
+						<ul>
+							<li class="c_999"><p><span>失败原因：</span>保险起保时间有误，请修改后再试！</p></li>
+						</ul>
+						<h4 class="c_666">请修改：</h4>
+						<!--修改错误-->
+						<div class="_changeError">
+							<!--保险起保时间-->
+							<div class="bg_f" style="margin-top: .5rem;">
+								<div class="weui_cell bg_f" style="width: 91%;padding-right:0 ;">
+									<div class="weui_cell_hd" style="width: 130px !important;">强制险起保时间</div>
+									<div class="weui_cell_bd weui_cell_primary pr tr demo-cont" data-role="fieldcontain">
+										<input class="weui_input dateTime" id="forcePolicy_changeTime" type="text" placeholder="请选择起保时间" />
+										<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+										<span class="iconfont icon-xiajiantou pa c_999" style="right:-4%;top:5px"></span>
+									</div>
+			
+								</div>
+							</div>
+							<p class="f14 c_c22" style="padding: 0 1rem;">*强制险起保时间不允许为空</p>
+							<div class="bg_f" style="margin-top: .5rem;">
+								<div class="weui_cell bg_f" style="width: 91%;padding-right:0 ;">
+									<div class="weui_cell_hd" style="width: 130px !important;">商业险起保时间</div>
+									<div class="weui_cell_bd weui_cell_primary pr tr demo-cont" data-role="fieldcontain">
+										<input class="weui_input dateTime" id="busPolicy_changeTime" type="text" placeholder="请选择起保时间" />
+										<i class="iconfont icon-close c_666 pa" style="right: 5px;top:-1px; display: none;font-size: 1.2rem;"></i>
+										<span class="iconfont icon-xiajiantou pa c_999" style="right:-4%;top:5px"></span>
+									</div>
+			
+								</div>
+							</div>
+							<p class="f14 c_c22" style="padding: 0 1rem;">*商业险起保时间不允许为空</p>
+						</div>
+						<div class="tc _btnBox">
+							<a href="javascript:void(0)" id="aginChecked_btn" class=" bg_099 mybtn">再次核保</a>
+							<a href="javascript:void(0)" id="closeChecked_btn" class="mybtn closeChecked_btn" >关闭</a>
+						</div>
+					</div>
+					<!--等待人工核保-->
+					<div class="stay_checked">
+						<p class="c_666">
+							按照保险公司，您的保单自动核保未通过，需要人工核保，时效为1个工作，请您耐心等待。
+							您可以选择“等待人工核保”，人工核保结果会在1个工作日后通知您，您接到通知后完成支付，即可完成投保
+							您也可以选择“关闭”，以重新选择别家保险公司进行投保。
 
-				</li>
-			</ul>
+						</p>
+						<div class="tc _btnBox">
+							<a href="javascript:void(0)" id="waitChecked_btn" class=" bg_099 mybtn">等待人工核保</a>
+							<a href="javascript:void(0)" class="mybtn closeChecked_btn" >关闭</a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!--算保费结束-->
 	</body>
-	
+
 	<script src="../js/lib/TouchSlide.1.1.js"></script>
+	<!--<script src="../js/touch.js"></script>-->
 	<!--<script src="../js/lib/template.js"></script>-->
 	<script type="text/javascript" src="../js/lib/global.js"></script>
-	<script type="text/javascript" src="../js/flow.js">	</script>
+	<script type="text/javascript" src="../js/flow.js">
+	</script>
+
 </html>

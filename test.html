@@ -89,9 +89,18 @@
         .header h1 { margin: 0; padding: 0; color: #fff; text-align: center; font-size: 1.25em; font-weight: bold; text-shadow: 1px 1px 1px #000; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
         .content { padding: 1em; }
     </style>
-
+	<script src="js/lib/template.js"></script>
     <script>
         $(function () {
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
+        	
             $('.dateTime').on('focus', function() {
                 $('.demo-cont').hide();
                 $(this).parent().show();
@@ -111,6 +120,29 @@
 </head>
 
 <body>
+	
+	<button id="btn" template="temp0">测试</button>
+	<div id="template1"></div>
+	<script  id="test" type="text/html">
+		<h1>{{title}}</h1>
+		<ul>
+		    {{each list as value i}}
+		        <li>索引 {{i + 1}} ：{{value}}</li> 
+		        <div id="temp{{i}}"></div>
+		       
+		    {{/each}}
+		</ul>
+	</script>
+	<!--<div id="template2"></div>-->
+	<script  id="test2" name="test2"  type="text/html">
+		<h1>{{titles}}</h1>
+		<ul>
+		    {{each lists as value i}}
+		        <li>索引 {{i + 1}} ：{{value}}</li> 
+		    {{/each}}
+		</ul>
+	</script>
+	
     <div class="header">
         <h1>Mobiscroll</h1>
     </div>
@@ -143,7 +175,24 @@
 		}
 	}
 	$(function(){
-		alert(obj.data());
+		var data = {
+		    title: '标签',
+		    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+		};
+		var data1 = {
+		    titles: '标签',
+		    lists: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+		};
+		var html = template('test', data);
+		document.getElementById('template1').innerHTML = html;
+//		document.getElementById('template2').innerHTML = html1;
+		
+		$("#btn").on("click",function(){
+			var templates = $(this).attr("template")
+			alert(templates)
+			var html1 = template('test2', data1);
+			document.getElementById(''+templates+'').innerHTML = html1;
+		})
 	})
 </script>
 
